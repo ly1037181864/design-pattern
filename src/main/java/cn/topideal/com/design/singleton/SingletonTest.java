@@ -7,7 +7,23 @@ import java.util.concurrent.CyclicBarrier;
 public class SingletonTest {
 
     public static void main(String[] args) {
-        test1();
+        //test1();
+        test2();
+    }
+
+    /**
+     * 懒汉式单例模式
+     */
+    public static void test2() {
+        LazySingleton instance = LazySingleton.getInstance();
+        SingletonThread.excute(10);
+
+        LazySingleton instance2 = (LazySingleton) invokeTest(LazySingleton.class);
+        System.out.println(instance == instance2);
+
+        LazySingleton instance3 = (LazySingleton) serializableTest(instance);
+        System.out.println(instance3 == instance);
+
     }
 
     /**
@@ -119,7 +135,8 @@ class SingletonThread {
                     e.printStackTrace();
                 }
                 System.out.println(Thread.currentThread().getName() + "开始运行：\t" + System.currentTimeMillis());
-                HungerSingleton instance = HungerSingleton.getInstance();
+                //HungerSingleton instance = HungerSingleton.getInstance();
+                LazySingleton instance = LazySingleton.getInstance2();
                 System.out.println(instance);
 
             }, String.valueOf(i)).start();
