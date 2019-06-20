@@ -8,7 +8,24 @@ public class SingletonTest {
 
     public static void main(String[] args) {
         //test1();
-        test2();
+        //test2();
+        test3();
+    }
+
+    /**
+     * 静态内部类实现单例
+     */
+    public static void test3() {
+        LazyStaticSingleton instance = LazyStaticSingleton.getInstance();
+        SingletonThread.excute(10);
+
+        //反射破坏单例
+        LazyStaticSingleton instance2 = (LazyStaticSingleton) invokeTest(LazyStaticSingleton.class);
+        System.out.println(instance == instance2);
+
+        //序列化破坏单例
+        LazyStaticSingleton instance3 = (LazyStaticSingleton) serializableTest(instance);
+        System.out.println(instance3 == instance);
     }
 
     /**
@@ -18,9 +35,11 @@ public class SingletonTest {
         LazySingleton instance = LazySingleton.getInstance();
         SingletonThread.excute(10);
 
+        //反射破坏单例
         LazySingleton instance2 = (LazySingleton) invokeTest(LazySingleton.class);
         System.out.println(instance == instance2);
 
+        //序列化破坏单例
         LazySingleton instance3 = (LazySingleton) serializableTest(instance);
         System.out.println(instance3 == instance);
 
