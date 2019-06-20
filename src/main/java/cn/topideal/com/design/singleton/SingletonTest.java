@@ -11,7 +11,29 @@ public class SingletonTest {
         //test1();
         //test2();
         //test3();
-        test4();
+        //test4();
+        //test5();
+        test6();
+    }
+
+    /**
+     * 容器式单例
+     * ThreadLocal 线程范围内的线程安全
+     */
+    public static void test6() {
+        ThreadLocalSingleton instance = ThreadLocalSingleton.getInstance();
+        System.out.println(Thread.currentThread().getName() + "\t" + instance);
+        System.out.println(Thread.currentThread().getName() + "\t" + instance);
+        System.out.println(Thread.currentThread().getName() + "\t" + instance);
+        SingletonThread.excute(10);
+    }
+
+    /**
+     * 容器注册单例
+     * 容器注册单例同样出现了线程安全问题是因为ConcurrentHashMap是线程安全的，但调用getInstance方法不是线程安全的
+     */
+    public static void test5() {
+        SingletonThread.excute(10);
     }
 
     /**
@@ -191,8 +213,12 @@ class SingletonThread {
                 }
                 System.out.println(Thread.currentThread().getName() + "开始运行：\t" + System.currentTimeMillis());
                 //HungerSingleton instance = HungerSingleton.getInstance();
-                LazySingleton instance = LazySingleton.getInstance2();
-                System.out.println(instance);
+                //LazySingleton instance = LazySingleton.getInstance2();
+                //HashMapSingleton instance = HashMapSingleton.getInstance(HashMapSingleton.class.getName());
+                ThreadLocalSingleton instance = ThreadLocalSingleton.getInstance();
+                System.out.println(Thread.currentThread().getName() + "\t" + instance);
+                System.out.println(Thread.currentThread().getName() + "\t" + instance);
+                System.out.println(Thread.currentThread().getName() + "\t" + instance);
 
             }, String.valueOf(i)).start();
         }
