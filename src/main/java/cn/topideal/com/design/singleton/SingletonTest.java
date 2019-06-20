@@ -2,6 +2,7 @@ package cn.topideal.com.design.singleton;
 
 import java.io.*;
 import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.concurrent.CyclicBarrier;
 
 public class SingletonTest {
@@ -9,7 +10,42 @@ public class SingletonTest {
     public static void main(String[] args) {
         //test1();
         //test2();
-        test3();
+        //test3();
+        test4();
+    }
+
+    /**
+     * 枚举实现单例
+     * 枚举实现单例解决了序列化和反射带来的问题
+     * 序列化和反序列化时枚举是通过类对象和类名来定位类的实例
+     * 反射时JDK直接检测到如果时枚举类反射直接抛出异常，从JDK底层就避免了反射实例化枚举类
+     */
+    public static void test4() {
+        EnumSingleton instance = EnumSingleton.getInstance();
+        instance.setObj(new Object());
+
+        EnumSingleton instance2 = (EnumSingleton) serializableTest(instance);
+        System.out.println(instance2 == instance);
+
+//        EnumSingleton instance3 = (EnumSingleton) invokeTest(EnumSingleton.class);
+//        System.out.println(instance == instance3);
+
+        try {
+            Constructor<EnumSingleton> constructor = EnumSingleton.class.getDeclaredConstructor(String.class, int.class);
+            constructor.setAccessible(true);
+            EnumSingleton instance3 = constructor.newInstance("tom", 666);
+            System.out.println(instance == instance3);
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     /**
