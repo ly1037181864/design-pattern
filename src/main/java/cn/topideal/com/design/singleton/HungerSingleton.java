@@ -8,12 +8,14 @@ import java.io.Serializable;
  */
 public class HungerSingleton implements Serializable {
 
-    private HungerSingleton() {
-    }
-
     //final关键字表示变量不能被修改
     public static final HungerSingleton singleton = new HungerSingleton();
 
+    //反射破坏单例时
+    private HungerSingleton() {
+        if (singleton != null)
+            throw new RuntimeException("单例以存在！");
+    }
 
     /**
      * 饿汉式单例的另一种写法

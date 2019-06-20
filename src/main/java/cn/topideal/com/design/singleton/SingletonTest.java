@@ -8,12 +8,12 @@ import java.util.concurrent.CyclicBarrier;
 public class SingletonTest {
 
     public static void main(String[] args) {
-        //test1();
+        test1();
         //test2();
         //test3();
         //test4();
         //test5();
-        test6();
+        //test6();
     }
 
     /**
@@ -212,10 +212,10 @@ class SingletonThread {
                     e.printStackTrace();
                 }
                 System.out.println(Thread.currentThread().getName() + "开始运行：\t" + System.currentTimeMillis());
-                //HungerSingleton instance = HungerSingleton.getInstance();
+                HungerSingleton instance = HungerSingleton.getInstance();
                 //LazySingleton instance = LazySingleton.getInstance2();
                 //HashMapSingleton instance = HashMapSingleton.getInstance(HashMapSingleton.class.getName());
-                ThreadLocalSingleton instance = ThreadLocalSingleton.getInstance();
+                //ThreadLocalSingleton instance = ThreadLocalSingleton.getInstance();
                 System.out.println(Thread.currentThread().getName() + "\t" + instance);
                 System.out.println(Thread.currentThread().getName() + "\t" + instance);
                 System.out.println(Thread.currentThread().getName() + "\t" + instance);
