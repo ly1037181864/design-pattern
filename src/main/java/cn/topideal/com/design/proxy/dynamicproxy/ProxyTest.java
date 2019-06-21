@@ -6,8 +6,27 @@ public class ProxyTest {
     public static void main(String[] args) {
         //test1();
         //test2();
+        test3();
     }
 
+    /**
+     * 此处还要研究
+     * CGLIB的实现原理
+     */
+    public static void test3() {
+        try {
+            CglibEmployeeProxy proxy = new CglibEmployeeProxy(new Employee());
+            proxy.setCallback(new CglibProxyFactory());
+            proxy.findJobProxy();
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        }
+    }
+
+
+    /**
+     * CGLIB代理
+     */
     public static void test2() {
         try {
             CglibProxyFactory factory = new CglibProxyFactory();
