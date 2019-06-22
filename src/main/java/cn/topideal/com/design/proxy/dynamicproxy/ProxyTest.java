@@ -7,6 +7,12 @@ public class ProxyTest {
         //test1();
         //test2();
         //test3();
+        Class<?>[] interfaces = Employee.class.getInterfaces();
+        test5(interfaces);
+    }
+
+    public static void test5(Class<?>... ints) {
+        System.out.println(ints.length);
     }
 
 
@@ -35,6 +41,9 @@ public class ProxyTest {
      * 松通过获取常量池中的位置来判定当前这块内存代表的数据信息，具体是哪一类型的数据。而常量池的内存也是有大小的，不可能无限
      * 制增长，也就是我们虚拟机为常量池定义了14中类型，分别是uft8_info,Integer_info,Class_info,Field_info等定义信
      * 息,这些类型同样跟我们的Java基本类型一样，同样存在大小，而uft8_info类型在内存中只占据2个字节，即2<<16。
+     *
+     * 在java类中存储接口数量用两个字节，一个字节占8个位置，两个字节就占了16位，
+     * 二进制16位数最大是1111  1111  1111 1111 ，换算成10进制就是65535。
      */
     public static void test4() {
         Class<?>[] interfaces = Employee.class.getInterfaces();
