@@ -1,6 +1,5 @@
 package cn.topideal.com.design.proxy.dynamicproxy;
 
-import net.sf.cglib.core.DebuggingClassWriter;
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
@@ -27,8 +26,9 @@ public class CglibProxyFactory implements MethodInterceptor {
      * @return
      */
     public Object getCglibProxy() {
-        String pcgName = "/Users/liuyou/topideal/design-pattern/target/classes";
-        System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, pcgName);
+        //生成代理文件
+        //String pcgName = "/Users/liuyou/topideal/design-pattern/target/classes";
+        //System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, pcgName);
         Enhancer enhancer = new Enhancer();
         enhancer.setSuperclass(Employee.class);
         enhancer.setCallback(this);
