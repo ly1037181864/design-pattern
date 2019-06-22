@@ -1,0 +1,36 @@
+//代理模式
+静态代理
+    组合：代理类实现目标代理类的接口并持有目标代理对象的引用
+    聚合：代理类继承目标代理类
+优点：逻辑简单，实现快速
+缺点：静态代理只能为单一对象实现代理，如果需求改变就需要增加需求类的代理类并实现相应的代理逻辑，
+这就增加了系统的复杂性，增加代码的可维护难度
+
+动态代理：程序在运行时自动生产代理对象并实现代理的过程，和静态代理区别的是，静态代理需要手动创建代理类，而动态代理是程序运行时动态生成
+
+    JDK代理
+        JDK自带的代理工具形式，Proxy动态生成代理类的字节码并加载到内存中，通过实现InvocationHandler接口重写
+        invoke方法，在JDK动态生产代理类$Proxy0时，默认继承Proxy并实现了目标代理类接口，在重写接口方法时，是通
+        过super.h.invoke方法调用拦截器方法，来动态实现功能增强等逻辑处理。
+
+    CGLIB代理
+        Enhancer对象通过ASM框架动态生成了Employee$$EnhancerByCGLIB$$3242fb27对象并继承目标代理对象，重写了CGLIB$findJob$0()
+        和动态生成findJob() 方法，其中findJob() 方法是代理类的方法，而CGLIB$findJob$0()方法则是重写于目标代理类的findJob() 方法，
+        这一点需要特别注意，当代理类调用findJob() 方法时，代理对象会去判断是否存在回调对象MethodInterceptor，如果不存在，直接调用父类
+        的findJob() 方法，否则会调用实现了MethodInterceptor拦截器接口的CglibProxyFactory类的intercept方法，并调用MethodProxy的
+        invokeSuper() 方法，在并调用MethodProxy的invokeSuper() 方法中，进行了init（）初始化，并在初始化的过程中，动态的创建了
+        MethodProxy.CreateInfo ci 和MethodProxy.FastClassInfo fci对象，它保存了目标代理类和代理类的class信息及调用方法findJob()
+        和CGLIB$findJob$0()的下标信息，并调用MethodProxy.FastClassInfo fci对象的invoke（）方法，即在init（）初始化过程中的helper()
+        动态生成的Employee$$EnhancerByCGLIB$$3242fb27$$FastClassByCGLIB$$c7a8850f对象的invoke（）方法，通过入参下标来找到代理类
+        中的CGLIB$findJob$0()方法，并调用Employee$$EnhancerByCGLIB$$3242fb27代理对象的CGLIB$findJob$0()方法，来实现最终调用重写了
+        父类的CGLIB$findJob$0()方法并调用super.findJob()方法，实现调用父类的逻辑。这也就是为什么CGLIB代理在动态调用的过程中要比JDK代理的
+        效率高的原因，它是通过动态生成FastClass子类，并保存代理类和目标类的元信息及调用方法的下标信息，最终还是通过对象点方法名的方式调用的，而
+        不是通过JDK的反射来实现的，但是在生成字节码文件时它并不占优势。
+
+
+
+JDK代理必须要实现目标代理类的接口，以及实现InvocationHandler接口
+CGLIB不需要实现目标类接口，只需要继承目标类，但这就要求目标类必须 不能为final类，方法也不能被申明为final的，否则无法完成代理。
+
+两种动态代理都有各自的优势和缺点，这就需要根据业务和实际的情况进行选择。在Spring中，默认是判断如果目标代理类实现了接口，那么Spring
+将采用JDK的代理方法，否则将使用CGLIB代理，当然也可以通过参数强制要求Spring使用CGLIB代理。
