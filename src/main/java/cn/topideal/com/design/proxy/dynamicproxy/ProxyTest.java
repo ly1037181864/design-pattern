@@ -26,6 +26,7 @@ public class ProxyTest {
 
     /**
      * CGLIB代理
+     * 底层是由ASM框架动态生成代理类，
      */
     public static void test2() {
         try {

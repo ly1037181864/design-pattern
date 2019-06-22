@@ -28,8 +28,10 @@ public class CglibEmployeeProxy extends Employee implements Factory {
         callbacks = null;
         Class clazzProxy = CglibEmployeeProxy.class;
         Class clazz = Employee.class;
-        findJob = ReflectUtils.findMethods(new String[]{"findJob", "()V"}, clazz.getDeclaredMethods())[0];
-        findJobProxy = MethodProxy.create(clazz, clazzProxy, "()V", "findJob", "findJobProxy");
+        findJob = ReflectUtils.findMethods(new String[]{"findJobProxy", "()V"}, clazzProxy.getDeclaredMethods())[0];
+        findJobProxy = MethodProxy.create(clazz, clazzProxy, "()V", "findJobProxy", "findJob");
+
+
         emptyArgs = new Object[0];
     }
 
@@ -49,14 +51,14 @@ public class CglibEmployeeProxy extends Employee implements Factory {
      * @throws Throwable
      */
     public void findJobProxy() throws Throwable {
-        MethodInterceptor var10000 = this.interceptor;
-        if (var10000 == null) {
+        MethodInterceptor interceptor = this.interceptor;
+        if (interceptor == null) {
             bindCallbacks(this);
-            var10000 = this.interceptor;
+            interceptor = this.interceptor;
         }
 
-        if (var10000 != null) {
-            var10000.intercept(this, findJob, emptyArgs, findJobProxy);
+        if (interceptor != null) {
+            interceptor.intercept(this, findJob, emptyArgs, findJobProxy);
         } else {
             super.findJob();
         }
