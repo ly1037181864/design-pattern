@@ -1,0 +1,15 @@
+//Java多线程基础
+    线程的几种状态
+        NEW             线程创建时的初始化状态
+        RUNNABLE        线程调用start方法、被唤醒、由阻塞队列进入同步队列
+        BLOCKED         线程获取锁失败后进入阻塞队列后
+        WAITING         线程wait、join、park等方法后的状态
+        TIMED_WAITING   线程wait、join、sleep、park等方法后的状态带超时时间设置
+        TERMINATED      线程结束run方法后
+
+    线程的创建方式
+        继承Thread类
+        实现Runnable接口
+        实现Callable接口
+        使用线程池
+

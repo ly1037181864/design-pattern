@@ -1,0 +1,124 @@
+//Java设计模式总结
+工厂模式
+    简单工厂
+        getBean(String name)
+        interface接口实现，专业的人干专业的事
+    抽象工厂
+        产品族和产品等级，一个工厂生产多个产品
+
+单例模式
+    单例模式的常见写法
+        饿汉式单例
+        懒汉式单例       double-check机制+synchronized+volatile
+        内部类实现单例    唱我内部类的加载机制
+        注册式单例       枚举
+        容器式单例       ThreadLocal、ConcurrentHashMap
+    单例需要注意的问题：线程安全问题、序列化和反序列化、反射、克隆破坏单例
+
+原型模式
+    主要是减少类的创建的复杂度，BeanUtils.copyProperties()，JSONObject.paseObject()等
+
+代理模式
+    静态代理
+        组合:实现目标代理类接口并持有目标代理类引用
+        聚合:继承目标代理类
+    动态代理
+        JDK代理：Proxy和InvocationHandler,内部实现主要是通过动态生成$ProxyO对象继承Proxy实现目标代理类接口，通过调用父类Proxy对象的InvocationHandler的invoke方法实现对目标代理类的增强
+        CGLIB代理：通过Enhancer对象依托ASM框架动态生成代理对象，主要是继承了目标代理类，生成了两个方法，当代理对象调用代理方法时，程序会判断是否存在回调函数，如果不存在则认为不需要代理，否则会通
+        过代理对象MethodInterceptor调用intercept方法，在invokeSuper方法中进行初始化并动态生成两个继承于FastClass类，这个类中有一个重要的方法getIndex()，在init初始化方法中我们会去创建
+        MethodProxy.CreateInfo ci和MethodProxy.FastClassInfo fci两个对象，用来记录代理类和目标类的class信息，以及对应的调用方法的下标，然后通过getIndex()方法找到下标所对应的case列表
+        最后通过定位到的信息，通过我们代理对象调用目标方法最终实现对目标代理类的调用方法的增强，这也是为什么CGLIB代理方法调用效率会比JDK通过反射的方式调用的效率高的根本原因，但是在生成字节码对象时，
+        JDK则要占据优势
+
+委派模式
+    任务分工
+
+策略模式
+    通过策略定义采用不同的策略完成同一的流程定义
+
+模版模式
+    父类定义模版，子类根据自己的情况可以复用父类的模版方法，也可以重写父类的方法
+
+适配器模式
+    针对旧有功能实现新的扩展，同时新的扩展也要兼容旧有功能
+
+装饰者模式
+    对自己进行包装，但是必能改变is-a的属性，最常见的就是IO流
+
+观察者模式
+    动态监听
+
+创建型
+    工厂方法模式(Factory Method)、抽象工厂模式(Abstract Factory)、 建造者模式(Builder)、原型模式(Prototype)、单例模式(Singleton)
+
+结构型
+    适配器模式(Adapter)、桥接模式(Bridge)、组合模式(Composite)、 装饰器模式(Decorator)、门面模式(Facade)、享元模式(Flyweight)、 代理模式(Proxy)
+
+行为型
+    解释器模式(Interpreter)、模板方法模式(Template Method)、 责任链模式(Chain of Responsibility)、命令模式(Command)、 迭代器模式(Iterator)、
+    调解者模式(Mediator)、备忘录模式(Memento)、 观察者模式(Observer)、状态模式(State)、策略模式(Strategy)、 访问者模式(Visitor)
+
+各种设计模式之间的对比
+    单例模式和工厂模式
+    实际业务代码中，通常会把工厂类设计为单例。
+
+    策略模式和工厂模式
+    1、工厂模式包含工厂方法模式和抽象工厂模式是创建型模式，策略模式属于行为型模式。
+    2、工厂模式主要目的是封装好创建逻辑，策略模式接收工厂创建好的对象，从而实现不同的行为。
+
+    策略模式和委派模式
+    1、策略模式是委派模式内部的一种实现形式，策略模式关注的结果是否能相互替代。
+    2、委派模式更关注分发和调度的过程。
+
+    模板方法模式和工厂方法模式
+    工厂方法是模板方法的一种特殊实现。对于工厂方法模式的 create()方法而言，相当于只有一个步骤的模板方法模式。这一个步 骤交给子类去实现。而模板方法呢，
+    将 needHomework()方法和 checkHomework()方 法交给子类实现，needHomework()方法和 checkHomework()方法又属于父类的某一 个步骤且不可变更。
+
+    模板方法模式和策略模式
+    1、模板方法和策略模式都有封装算法。
+    2、策略模式是使不同算法可以相互替换，且不影响客户端应用层的使用。
+    3、模板方法是针对定义一个算法的流程，将一些有细微差异的部分交给子类实现。
+    4、模板方法模式不能改变算法流程，策略模式可以改变算法流程且可替换。策略模式通 常用来代替 if...else...等条件分支语句。
+
+    装饰者模式和静态代理模式
+    1、装饰者模式关注点在于给对象动态添加方法，而代理更加注重控制对对象的访问。
+    2、代理模式通常会在代理类中创建被代理对象的实例，而装饰者模式通常把被装饰者作为构造参数。
+
+
+    装饰者模式和适配器模式
+    1、装饰者模式和适配器模式都是属于包装器模式(Wrapper Pattern)。
+    2、装饰者模式可以实现被装饰者与相同的接口或者继承被装饰者作为它的子类，而适配 器和被适配者可以实现不同的接口。
+
+    适配器模式和静态代理模式
+    适配器可以结合静态代理来实现，保存被适配对象的引用，但不是唯一的实现方式。 适配器模式和策略模式
+    在适配业务复杂的情况下，利用策略模式优化动态适配逻辑。
+
+
+工厂模式(Factory)               只对结果负责,封装创建过程                       BeanFactory、Calender
+单例模式(Singleton)             保证独一无二                                  ApplicationContext、Calender
+原型模式(Prototype)             拔一根猴毛,吹出千万个                          ArrayList、PrototypeBean
+代理模式(Proxy)                 找人办事,增强职责                              ProxyFactoryBean、 JdkDynamicAopProxy、CglibAopProxy
+委派模式(Delegate)              干活算你的(普通员工)，功劳算我的(项目经理)         DispatcherServlet、 BeanDefinitionParserDelegate
+策略模式(Strategy)              用户选择,结果统一                              InstantiationStrategy
+模板模式(Template)              流程标准化,自己实现定制                         JdbcTemplate、HttpServlet
+适配器模式(Adapter)              兼容转换头                                   AdvisorAdapter、HandlerAdapter
+装饰器模式(Decorator)            包装，同宗同源                                BufferedReader、InputStream、OutputStream、 HttpHeadResponseDecorator
+观察者模式(Observer)             任务完成时通知                                ContextLoaderListener
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
