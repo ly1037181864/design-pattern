@@ -1,11 +1,12 @@
 //Java多线程基础
     线程的几种状态
-        NEW             线程创建时的初始化状态
-        RUNNABLE        线程调用start方法、被唤醒、由阻塞队列进入同步队列
-        BLOCKED         线程获取锁失败后进入阻塞队列后
-        WAITING         线程wait、join、park等方法后的状态
-        TIMED_WAITING   线程wait、join、sleep、park等方法后的状态带超时时间设置
-        TERMINATED      线程结束run方法后
+        NEW             初始状态，线程被构建，但是还没有调用 start 方法
+        RUNNABLE        运行状态，JAVA 线程把操作系统中的就绪 和运行两种状态统一称为“运行中”
+        BLOCKED         阻塞状态，线程因进入同步方法获取锁对象失败而进入阻塞状态
+        WAITING         等待状态，因为某种原因放弃了 CPU 使用权，如调用这些方法Object.wait、Thread.join、LockSupport.parkNanos、LockSupport.parkUntil
+        TIMED_WAITING   超时等待状态，超时以后自动返回，如调用这些方法Thread.sleep、Object.wait、Thread.join、LockSupport.parkNanos、LockSupport.parkUntil等设置了超时时间
+        TERMINATED      终止状态，表示当前线程执行完毕
+
 
     线程的创建方式
         继承Thread类
@@ -13,3 +14,48 @@
         实现Callable接口
         使用线程池
 
+
+    线程中断
+    线程间的一种通信机制，当其他线程通过调用当前线程的interrupt方法，将当前线程的中断状态设置为false，即向当前线程发起了一个中断请求，（尽管JavaAPI提供了诸如stop、suspend等方法强制终止线程
+    但是，通过这一方式将会强迫线程终止执行，从而导致数据的一致性问题等），线程会不断的轮询这一中断标识状态，但是否中断取决于应用程序本身，调用interrupt方法仅仅只是将当前线程的中断标识设置为true，
+    表示当前线程收到过中断请求，但是否响应这一中断取决于线程本身，这就给应用程序提供了一个很好的退出线程运行的机制。再次强调，调用interrupt方法仅仅只是标记当前线程的中断状态为true而已，线程并不
+    会因此中断，只有应用程序显示的响应这一中断状态，并根据中断状态退出运行，线程才会退出，本质上是通过一个中间状态让线程结束运行。
+
+    中断操作对线程各个运行状态的影响
+
+    NEW和TERMINATED
+    线程的new状态表示还未调用start方法，还未真正启动。线程的terminated状态表示线程已经运行终止。这两个状态下调用中断方法来中断线程的时候，Java认为毫无意义，所以并不会设置线程的中断标识位，什么
+    事也不会发生。即对于处于new和terminated状态的线程对于中断是屏蔽的，也就是说中断操作对这两种状态下的线程是无效的。
+
+    RUNNABLE
+    如果线程处于运行状态，那么该线程的状态就是RUNNABLE，但是不一定所有处于RUNNABLE状态的线程都能获得CPU运行，在某个时间段，只能由一个线程占用CPU，那么其余的线程虽然状态是RUNNABLE，但是都没有
+    处于运行状态。而我们处于RUNNABLE状态的线程在遭遇中断操作的时候只会设置该线程的中断标志位，并不会让线程实际中断，想要发现本线程已经被要求中断了则需要用程序自己去判断。这里其实Java将这种权力交
+    给了我们的程序，Java给我们提供了一个中断标志位，我们的程序可以通过if判断中断标志位是否被设置来中断我们的程序而不是系统强制的中断。
+
+    BLOCKED
+    当线程处于BLOCKED状态说明该线程由于竞争某个对象的锁失败而被挂在了该对象的阻塞队列上了。那么此时发起中断操作不会对该线程产生任何影响，依然只是设置中断标志位。
+
+    WAITING/TIMED_WAITING
+    这两种状态本质上是同一种状态，只不过TIMED_WAITING在等待一段时间后会自动释放自己，而WAITING则是无限期等待，需要其他线程调用notify方法释放自己。但是他们都是线程在运行的过程中由于缺少某些条
+    件而被挂起在某个对象的等待队列上。当这些线程遇到中断操作的时候，会抛出一个InterruptedException异常，并清空中断标志位。
+
+    interrupt：当其他线程通过调用当前线程的interrupt方法，表示向当前线程打个招呼，告诉他可以中断线程的执行了，至于什么时候中断，取决于当前线程自己。
+    线程通过检查自身是否被中断来进行响应，可以通过isInterrupted()来判断是否被中断。
+    volatile关键字
+
+    //这个属于Thread类的方法，默认是会清除线程状态
+    public static boolean interrupted() {
+            return currentThread().isInterrupted(true);
+    }
+
+    //这个属于对象的方法，默认是不会清除线程状态
+    public boolean isInterrupted() {
+            return isInterrupted(false);
+    }
+
+    中断状态复位
+    当前线程收到来自其他线程的中断请求时，会将当前线程的中断标识设置为true，即当前线程收到中断请求，如果当前线程没有响应这一中断操作，那么该中断标识位将一直是true，从线程安全行角度考虑，这种操作是
+    不安全的，需要我们显示的对其进行复位操作，但在WAITING/TIMED_WAITING状态下对线程进行中断操作，线程会抛出InterruptedException异常，并复位中断标志。
+    
+    总结
+    这种通过标识位或者中断操作的方式能够使线程在终止时有机会去清理资源，而不是武断地将线程停止，因此这种终止线程的做法显得更加安全和优雅。
