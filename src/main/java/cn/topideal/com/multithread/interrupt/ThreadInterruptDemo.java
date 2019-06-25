@@ -1,4 +1,4 @@
-package cn.topideal.com.multithread.basicthread;
+package cn.topideal.com.multithread.interrupt;
 
 import java.util.concurrent.TimeUnit;
 
