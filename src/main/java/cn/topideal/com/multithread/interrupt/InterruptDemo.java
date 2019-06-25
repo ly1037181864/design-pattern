@@ -21,7 +21,21 @@ public class InterruptDemo extends Thread {
         //threadStateInTerminated();
         //threadStateInBlock();
         //threadStateInWait();
-        interruptException();
+        //interruptException();
+        test1();
+    }
+
+    public static void test1() {
+        Thread aa = new Thread(() -> {
+            System.out.println(currentThread().getName() + "\t" + currentThread().isInterrupted() + "\t" + System.currentTimeMillis());//不清楚中断状态
+            System.out.println(currentThread().getName() + "\t" + Thread.interrupted() + "\t" + System.currentTimeMillis());//清除中断状态
+            System.out.println(currentThread().getName() + "\t" + currentThread().isInterrupted() + "\t" + System.currentTimeMillis());
+        });
+        aa.start();
+
+        aa.interrupt();
+        System.out.println(currentThread().getName() + "\t" + aa.isInterrupted() + "\t" + System.currentTimeMillis());
+
     }
 
     /**

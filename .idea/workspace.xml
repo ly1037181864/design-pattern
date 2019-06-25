@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c464f76-259a-4567-ad61-78cb513ddf92" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicthread/ImplThreadDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/thread1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicthread/basicThread.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicThread.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/topideal/com/multithread/basicthread/JoinDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/topideal/com/multithread/basicthread/JoinDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicThread.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/thread.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/interrupt/InterruptDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/interrupt/InterruptDemo.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -24,18 +24,64 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicThread.txt">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/Thread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
+            <state relative-caret-position="421">
+              <caret line="944" column="7" lean-forward="true" selection-start-line="944" selection-start-column="7" selection-end-line="944" selection-end-column="7" />
+              <folding>
+                <element signature="e#33588#33589#0" expanded="true" />
+                <element signature="e#33645#33646#0" expanded="true" />
+                <element signature="e#36709#36710#0" expanded="true" />
+                <element signature="e#36767#36768#0" expanded="true" />
+                <element signature="e#37304#37305#0" expanded="true" />
+                <element signature="e#37347#37348#0" expanded="true" />
+                <element signature="e#38621#38622#0" expanded="true" />
+                <element signature="e#38666#38667#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/thread.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="485">
               <caret line="163" column="9" selection-start-line="163" selection-start-column="9" selection-end-line="163" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/thread1.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" column="11" selection-start-line="9" selection-end-line="9" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/interrupt/InterruptDemo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="36" column="61" selection-start-line="36" selection-start-column="61" selection-end-line="36" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/interrupt/ThreadInterruptDemo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="94">
+              <caret line="10" column="47" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicthread/ImplThreadDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
+            <state relative-caret-position="8">
               <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
               <folding>
                 <element signature="e#892#893#0" expanded="true" />
@@ -83,7 +129,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/decorator/Person.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/decorator/IPersonDecorator.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/decorator/PersonDecorator.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/decorator/SonDis.java" />
@@ -126,7 +171,6 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicthread/ProcessorTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicthread/ThreadInterruptDemo.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/interrupt/ThreadInterruptDemo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/interrupt/InterruptDemo.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicthread/SleepDemo.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicthread/SleepAndJoinDemo.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicthread/Demo4.java" />
@@ -134,6 +178,8 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicthread/basicThread.txt" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicThread.txt" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicthread/ImplThreadDemo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/thread1.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/interrupt/InterruptDemo.java" />
       </list>
     </option>
   </component>
@@ -219,7 +265,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="multithread" type="462c0819:PsiDirectoryNode" />
-              <item name="basicthread" type="462c0819:PsiDirectoryNode" />
+              <item name="interrupt" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -230,7 +276,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561460028423" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561461175838" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -263,7 +309,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ImplThreadDemo">
+  <component name="RunManager" selected="Application.InterruptDemo">
     <configuration name="Demo4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.topideal.com.multithread.basicthread.Demo4" />
       <module name="design-pattern" />
@@ -283,6 +329,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cn.topideal.com.multithread.basicthread.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InterruptDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.topideal.com.multithread.interrupt.InterruptDemo" />
+      <module name="design-pattern" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.topideal.com.multithread.interrupt.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -316,26 +375,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SleepDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.topideal.com.multithread.basicthread.SleepDemo" />
-      <module name="design-pattern" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.topideal.com.multithread.basicthread.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.InterruptDemo" />
         <item itemvalue="Application.ImplThreadDemo" />
         <item itemvalue="Application.JoinDemo" />
         <item itemvalue="Application.Demo4" />
         <item itemvalue="Application.SleepAndJoinDemo" />
-        <item itemvalue="Application.SleepDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -355,7 +401,7 @@
       <workItem from="1561100371346" duration="43834000" />
       <workItem from="1561253052342" duration="17387000" />
       <workItem from="1561339033494" duration="15974000" />
-      <workItem from="1561425447281" duration="19531000" />
+      <workItem from="1561425447281" duration="20676000" />
     </task>
     <task id="LOCAL-00001" summary="原型模式">
       <created>1561105176784</created>
@@ -368,13 +414,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122037000" />
+    <option name="totallyTimeSpent" value="123182000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="973" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6235955" visible="true" weight="0.2991453" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6235955" weight="0.2991453" />
       <window_info id="Structure" order="1" sideWeight="0.3764045" side_tool="true" weight="0.22710623" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -383,12 +429,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291714" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.2292849" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.3938706" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.5868331" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4993895" weight="0.61521" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4993895" weight="0.20090806" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50061053" side_tool="true" weight="0.84108967" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.20317821" />
@@ -496,13 +542,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/design/observer/v1/Seller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/design/observer/v2/mouseevent/Keybord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -845,28 +884,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/interrupt/ThreadInterruptDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="e#907#908#0" expanded="true" />
-            <element signature="e#934#935#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/interrupt/InterruptDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1159">
-          <caret line="61" column="32" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="32" />
-          <folding>
-            <element signature="e#255#256#0" expanded="true" />
-            <element signature="e#282#283#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/Object.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
@@ -878,23 +895,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="4" column="78" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="1240" column="29" selection-start-line="1240" selection-start-column="17" selection-end-line="1240" selection-end-column="29" />
-          <folding>
-            <element signature="e#33588#33589#0" expanded="true" />
-            <element signature="e#33645#33646#0" expanded="true" />
-            <element signature="e#36709#36710#0" expanded="true" />
-            <element signature="e#36767#36768#0" expanded="true" />
-            <element signature="e#37304#37305#0" expanded="true" />
-            <element signature="e#37347#37348#0" expanded="true" />
-            <element signature="e#38621#38622#0" expanded="true" />
-            <element signature="e#38666#38667#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -912,16 +912,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicThread.txt">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
+        <state relative-caret-position="421">
+          <caret line="944" column="7" lean-forward="true" selection-start-line="944" selection-start-column="7" selection-end-line="944" selection-end-column="7" />
+          <folding>
+            <element signature="e#33588#33589#0" expanded="true" />
+            <element signature="e#33645#33646#0" expanded="true" />
+            <element signature="e#36709#36710#0" expanded="true" />
+            <element signature="e#36767#36768#0" expanded="true" />
+            <element signature="e#37304#37305#0" expanded="true" />
+            <element signature="e#37347#37348#0" expanded="true" />
+            <element signature="e#38621#38622#0" expanded="true" />
+            <element signature="e#38666#38667#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/thread.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
           <caret line="163" column="9" selection-start-line="163" selection-start-column="9" selection-end-line="163" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/thread1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="11" selection-start-line="9" selection-end-line="9" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/interrupt/ThreadInterruptDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="10" column="47" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicthread/ImplThreadDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
+        <state relative-caret-position="8">
           <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
           <folding>
             <element signature="e#892#893#0" expanded="true" />
@@ -931,6 +962,13 @@
             <element signature="e#1094#1095#0" expanded="true" />
             <element signature="e#1151#1152#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/interrupt/InterruptDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="36" column="61" selection-start-line="36" selection-start-column="61" selection-end-line="36" selection-end-column="61" />
         </state>
       </provider>
     </entry>
