@@ -19,10 +19,10 @@ public class InterruptDemo extends Thread {
     public static void main(String[] args) {
         //threadStateInNew();
         //threadStateInTerminated();
-        //threadStateInBlock();
+        threadStateInBlock();
         //threadStateInWait();
         //interruptException();
-        test1();
+        //test1();
     }
 
     public static void test1() {
@@ -132,12 +132,21 @@ public class InterruptDemo extends Thread {
         Thread cc = new Thread(() -> {
             System.out.println(currentThread().getName() + "\t当前线程的状态：" + currentThread().getState() + "\t 循环内当前线程的中断状态：" + currentThread().isInterrupted());
             synchronized (lock) {
-                System.out.println(currentThread().getName() + "\t当前线程的状态：" + currentThread().getState() + "\t 循环内当前线程的中断状态：" + currentThread().isInterrupted());
+                while (true) {
+
+                }
+                //System.out.println(currentThread().getName() + "\t当前线程的状态：" + currentThread().getState() + "\t 循环内当前线程的中断状态：" + currentThread().isInterrupted());
             }
-            System.out.println(currentThread().getName() + "\t当前系统时间：" + System.currentTimeMillis());
+            //System.out.println(currentThread().getName() + "\t当前系统时间：" + System.currentTimeMillis());
         }, "CC");
         cc.start();
 
+        try {
+            TimeUnit.MICROSECONDS.sleep(50);
+            System.out.println(currentThread().getName() + "\t当前系统时间：" + System.currentTimeMillis());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         Thread dd = new Thread(() -> {
             System.out.println(currentThread().getName() + "\t当前线程的状态：" + currentThread().getState() + "\t 循环内当前线程的中断状态：" + currentThread().isInterrupted());
