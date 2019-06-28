@@ -37,14 +37,16 @@ public class ReentrantLockSourceAnalyse implements Lock, java.io.Serializable {
          * subclasses, but both need nonfair try for trylock method.
          */
         final boolean nonfairTryAcquire(int acquires) {
+            //首次尝试获取锁失败后，仍然还是会再次尝试
             final Thread current = Thread.currentThread();
             int c = getState();
             if (c == 0) {
+                //再次尝试获取锁 获取成功，流程结束 否则获取失败就会构建同步队列 后面的流程跟公平锁一样
                 if (compareAndSetState(0, acquires)) {
                     setExclusiveOwnerThread(current);
                     return true;
                 }
-            } else if (current == getExclusiveOwnerThread()) {
+            } else if (current == getExclusiveOwnerThread()) {//是否为可重入锁
                 int nextc = c + acquires;
                 if (nextc < 0) // overflow
                     throw new Error("Maximum lock count exceeded");
@@ -119,9 +121,11 @@ public class ReentrantLockSourceAnalyse implements Lock, java.io.Serializable {
          */
         @Override
         final void lock() {
+            //设置锁状态为1，并设置当前线程独占锁
             if (compareAndSetState(0, 1))
                 setExclusiveOwnerThread(Thread.currentThread());
             else
+                //设置失败
                 acquire(1);
         }
 
