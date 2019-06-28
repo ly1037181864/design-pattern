@@ -119,6 +119,7 @@ final boolean acquireQueued(final Node node, int arg) {
             //当前节点的前一个节点不是head节点，也就是同步队列还有其他等待线程或者是尝试获取锁失败后
             //这个时候就要将当前note节点的前一个节点的waitStatus设置为-1，且挂起当前note节点的线程
             if (shouldParkAfterFailedAcquire(p, node) &&
+                //挂起当前线程
                 parkAndCheckInterrupt())
                 interrupted = true;
         }
@@ -129,3 +130,121 @@ final boolean acquireQueued(final Node node, int arg) {
 }
 
 //释放锁逻辑
+lock.unlock()//释放锁
+sync.release(1) //state状态减1
+//尝试释放锁
+public final boolean release(int arg) {
+    //尝试释放锁
+    if (tryRelease(arg)) {
+        //释放锁成功
+        Node h = head;
+        //判断当前head节点是否存在，或者head节点的waitStatus状态不为0
+        //如果当前head节点存在，则说明同步队列中还有需要唤醒的线程
+        //如果头节点的waitStatus不等于0是因为每一次有线程获取锁失败后，加入同步队列时，都会将前一个节点的waitStatus状态设置为-1
+        //如果头节点不为空且其状态waitStatus不等于0这个时候在同步队列中一定有等待线程
+        //不能只单纯判断头节点不为空，还有一种情况是第一个线程获得了锁，第二个线程尝试获取锁失败后，会构建note对象并加入同步队列，在挂起线程前
+        //还是会再次尝试获取锁，如果此次获取锁成功，那么就会将当前note节点替换成head节点，此时note节点的waitStatus状态为0，只有在获取锁再次失败后
+        //被挂起之前，它才会去将head节点的waitStatus设置为-1，并挂起当前线程，所以仅靠h != null这一条件显然是不够的
+        if (h != null && h.waitStatus != 0)
+            //唤醒同步队列中的等待线程
+            unparkSuccessor(h);
+        return true;
+    }
+    return false;
+}
+
+protected final boolean tryRelease(int releases) {
+    //直接将state状态减1
+    int c = getState() - releases;
+    //判断释放锁的线程是否是当前占有锁的线程，如果不是直接报错
+    if (Thread.currentThread() != getExclusiveOwnerThread())
+        throw new IllegalMonitorStateException();
+    boolean free = false;
+    if (c == 0) {//如果state复位到无锁状态，则释放锁成功，否则是可重入锁，需要多次unlock操作
+        free = true;
+        setExclusiveOwnerThread(null);
+    }
+    setState(c);
+    return free;
+}
+
+private void unparkSuccessor(Node node) {
+    //如果head节点状态小于0则更新为0
+    int ws = node.waitStatus;
+    if (ws < 0)
+        //挂起线程前，会将当前节点的前一个节点的waitStatus设置为-1 这也是if (h != null && h.waitStatus != 0)条件判断的原因所在
+        compareAndSetWaitStatus(node, ws, 0);
+
+    //获取当前head节点的下一个节点
+    Node s = node.next;
+    //head节点的下一个节点为null，这个所有可能是setHead节点时出现的并发情况，所以这种情况需要从tail节点从后往前遍历，
+    //找到最后一个waitStatus小于等于0的note节点进行唤醒
+    if (s == null || s.waitStatus > 0) {
+        s = null;
+        for (Node t = tail; t != null && t != node; t = t.prev)
+            if (t.waitStatus <= 0)
+                s = t;
+    }
+    //如果下一个节点存在，则唤醒head节点的下一个线程 释放锁的流程结束
+    if (s != null)
+        LockSupport.unpark(s.thread);
+}
+
+//线程被唤醒的流程
+final boolean acquireQueued(final Node node, int arg) {
+    boolean failed = true;
+    try {
+        boolean interrupted = false;
+        for (;;) {
+            //线程被唤醒后会再次判断，因为唤醒的线程是head节点的下一个note节点
+            final Node p = node.predecessor();
+            if (p == head && tryAcquire(arg)) {//此时p == head成立，会再次尝试获取锁 一定会获得锁成功
+                //将当前note节点替换head
+                setHead(node);
+                p.next = null; // help GC
+                failed = false;
+                return interrupted;
+            }
+            if (shouldParkAfterFailedAcquire(p, node) &&
+                //此处线程被挂起，释放锁后线程被唤醒
+                parkAndCheckInterrupt())
+                interrupted = true;
+        }
+    } finally {
+        if (failed)
+            cancelAcquire(node);
+    }
+}
+
+//被唤醒的线程再次尝试获取锁
+protected final boolean tryAcquire(int acquires) {
+    final Thread current = Thread.currentThread();//当前线程
+    int c = getState();//锁的状态 此时肯定是0 因为前一个线程释放了锁
+    if (c == 0) {
+        //还是会去判断同步队列的等待情况 此时一定是false
+        if (!hasQueuedPredecessors() &&
+            //占有锁成功
+            compareAndSetState(0, acquires)) {
+            setExclusiveOwnerThread(current);
+            return true;
+        }
+    }
+    else if (current == getExclusiveOwnerThread()) {
+        int nextc = c + acquires;
+        if (nextc < 0)
+            throw new Error("Maximum lock count exceeded");
+        setState(nextc);
+        return true;
+    }
+    return false;
+}
+
+public final boolean hasQueuedPredecessors() {
+    Node t = tail;
+    Node h = head;
+    Node s;
+    //此时h != t成立，同步队列里已经存在等待锁的线程，s = h.next) == null不成立，s.thread != Thread.currentThread()也不成立
+    //因为唤醒的就是head节点的下一个节点，所以一定不为空，且一定是当前线程 因此返回的一定是false
+    return h != t &&
+        ((s = h.next) == null || s.thread != Thread.currentThread());
+}

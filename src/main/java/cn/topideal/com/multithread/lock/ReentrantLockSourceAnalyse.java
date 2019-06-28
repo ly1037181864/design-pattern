@@ -167,6 +167,7 @@ public class ReentrantLockSourceAnalyse implements Lock, java.io.Serializable {
                 }
                 //如果当前已有线程获取锁，则判断占有锁的线程是否是当前线程，这就是实现重入锁的逻辑
             } else if (current == getExclusiveOwnerThread()) {
+                //可重入锁
                 int nextc = c + acquires;
                 if (nextc < 0)
                     throw new Error("Maximum lock count exceeded");

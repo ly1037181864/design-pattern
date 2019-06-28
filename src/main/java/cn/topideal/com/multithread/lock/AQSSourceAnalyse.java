@@ -884,6 +884,7 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
         if (!tryAcquire(arg) &&
                 //获取锁失败后 将当前线程构建一个Note对象并加入同步队列 同时标记为独占
                 acquireQueued(addWaiter(Node.EXCLUSIVE), arg))
+            //线程被挂起过，这里设置中断状态
             selfInterrupt();
     }
 
