@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c464f76-259a-4567-ad61-78cb513ddf92" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/collection/HashMapUnsafe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/11561690967_.pic_hd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/21561691669_.pic_hd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/31561704229_.pic_hd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/AQSSourceAnalyse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/FailLock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/ReentrantLockSourceAnalyse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/faillock.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/topideal/com/multithread/collection/HashMapUnsafe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/topideal/com/multithread/collection/HashMapUnsafe.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,14 +28,116 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/collection/HashMapUnsafe.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/FailLock.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+            <state relative-caret-position="345">
+              <caret line="19" column="17" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/concurrent/locks/ReentrantLock.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="236" column="28" selection-start-line="236" selection-start-column="28" selection-end-line="236" selection-end-column="28" />
+              <folding>
+                <element signature="e#7116#7117#0" expanded="true" />
+                <element signature="e#7150#7151#0" expanded="true" />
+                <element signature="e#8176#8177#0" expanded="true" />
+                <element signature="e#8216#8217#0" expanded="true" />
+                <element signature="e#8451#8452#0" expanded="true" />
+                <element signature="e#8515#8516#0" expanded="true" />
+                <element signature="e#9117#9118#0" expanded="true" />
+                <element signature="e#9144#9145#0" expanded="true" />
+                <element signature="e#15850#15851#0" expanded="true" />
+                <element signature="e#15881#15882#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/concurrent/locks/AbstractQueuedSynchronizer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="687">
+              <caret line="881" column="7" lean-forward="true" selection-start-line="881" selection-start-column="7" selection-end-line="881" selection-end-column="7" />
+              <folding>
+                <element signature="e#22675#22676#0" expanded="true" />
+                <element signature="e#22703#22704#0" expanded="true" />
+                <element signature="e#32644#32645#0" expanded="true" />
+                <element signature="e#32694#32695#0" expanded="true" />
+                <element signature="e#41392#41393#0" expanded="true" />
+                <element signature="e#41449#41450#0" expanded="true" />
+                <element signature="e#42562#42563#0" expanded="true" />
+                <element signature="e#42619#42620#0" expanded="true" />
+                <element signature="e#85889#85890#0" expanded="true" />
+                <element signature="e#85959#85960#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/ReentrantLockSourceAnalyse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="321">
+              <caret line="162" column="42" lean-forward="true" selection-start-line="162" selection-start-column="42" selection-end-line="162" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#5085#5086#0" expanded="true" />
+                <element signature="e#5125#5126#0" expanded="true" />
+                <element signature="e#5713#5714#0" expanded="true" />
+                <element signature="e#5791#5792#0" expanded="true" />
+                <element signature="e#6026#6027#0" expanded="true" />
+                <element signature="e#6053#6054#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/AQSSourceAnalyse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="277">
+              <caret line="1205" column="25" selection-start-line="1205" selection-start-column="25" selection-end-line="1205" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#5432#5433#0" expanded="true" />
+                <element signature="e#5483#5484#0" expanded="true" />
+                <element signature="e#7123#7124#0" expanded="true" />
+                <element signature="e#7151#7152#0" expanded="true" />
+                <element signature="e#7388#7389#0" expanded="true" />
+                <element signature="e#7420#7421#0" expanded="true" />
+                <element signature="e#18192#18193#0" expanded="true" />
+                <element signature="e#27773#27774#0" expanded="true" />
+                <element signature="e#29030#29031#0" expanded="true" />
+                <element signature="e#30951#30952#0" expanded="true" />
+                <element signature="e#32193#32194#0" expanded="true" />
+                <element signature="e#33008#33009#0" expanded="true" />
+                <element signature="e#41138#41139#0" expanded="true" />
+                <element signature="e#41529#41530#0" expanded="true" />
+                <element signature="e#46327#46335#0" expanded="true" />
+                <element signature="e#46950#46958#0" expanded="true" />
+                <element signature="e#47622#47630#0" expanded="true" />
+                <element signature="e#55194#55195#0" expanded="true" />
+                <element signature="e#71365#71366#0" expanded="true" />
+                <element signature="e#71408#71409#0" expanded="true" />
+                <element signature="e#73651#73659#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/faillock.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="587">
+              <caret line="119" column="64" selection-start-line="119" selection-start-column="64" selection-end-line="119" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -59,7 +168,12 @@
       <find>findJobProxy</find>
       <find>bout</find>
       <find>modCount</find>
+      <find>AbstractQueuedSynchronizer.</find>
+      <find>AbstractQueuedSynchronizer</find>
     </findStrings>
+    <replaceStrings>
+      <replace>AQSSourceAnalyse</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
@@ -68,10 +182,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/observer/JdPlatform.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/observer/v3/GuavaEvent.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/observer/v3/Seller.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/observer/v1/JdPlatform.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/observer/v3/GuavaEventTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/observer/v2/core/Event.java" />
@@ -119,6 +229,10 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/collection/LinkedListUnsafe.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/collection/HashSetUnsafe.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/collection/HashMapUnsafe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/FailLock.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/ReentrantLockSourceAnalyse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/AQSSourceAnalyse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/faillock.txt" />
       </list>
     </option>
   </component>
@@ -152,8 +266,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -204,7 +318,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="multithread" type="462c0819:PsiDirectoryNode" />
-              <item name="collection" type="462c0819:PsiDirectoryNode" />
+              <item name="lock" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="design-pattern" type="b2602c69:ProjectViewProjectNode" />
@@ -220,25 +334,28 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561633928748" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561704556708" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="cn.topideal.com.design.adapter" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock" />
       <recent name="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/observer/v2" />
       <recent name="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/observer/v3" />
       <recent name="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/adapter/c2/v2/adapters" />
       <recent name="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/adapter/c2/v1" />
-      <recent name="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/adapter/c2" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.topideal.com.design.adapter" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -253,7 +370,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.HashMapUnsafe">
+  <component name="RunManager" selected="Application.FailLock">
     <configuration name="ArrayListUnsafe" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.topideal.com.multithread.collection.ArrayListUnsafe" />
       <module name="design-pattern" />
@@ -267,12 +384,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CasSingleReferenceQue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.topideal.com.multithread.cas.CasSingleReferenceQue" />
+    <configuration name="FailLock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.topideal.com.multithread.lock.FailLock" />
       <module name="design-pattern" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cn.topideal.com.multithread.cas.*" />
+          <option name="PATTERN" value="cn.topideal.com.multithread.lock.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -321,11 +438,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FailLock" />
         <item itemvalue="Application.HashMapUnsafe" />
         <item itemvalue="Application.HashSetUnsafe" />
         <item itemvalue="Application.LinkedListUnsafe" />
         <item itemvalue="Application.ArrayListUnsafe" />
-        <item itemvalue="Application.CasSingleReferenceQue" />
       </list>
     </recent_temporary>
   </component>
@@ -347,7 +464,8 @@
       <workItem from="1561339033494" duration="15974000" />
       <workItem from="1561425447281" duration="21267000" />
       <workItem from="1561511398935" duration="9493000" />
-      <workItem from="1561598766108" duration="22460000" />
+      <workItem from="1561598766108" duration="22536000" />
+      <workItem from="1561640166558" duration="19317000" />
     </task>
     <task id="LOCAL-00001" summary="原型模式">
       <created>1561105176784</created>
@@ -360,13 +478,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155726000" />
+    <option name="totallyTimeSpent" value="175119000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="973" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.861521" visible="true" weight="0.26862028" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.861521" visible="true" weight="0.1996337" />
       <window_info id="Structure" order="1" sideWeight="0.138479" side_tool="true" weight="0.26862028" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -375,12 +493,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291714" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.17139614" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.44835415" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" weight="0.17139614" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.3200908" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4993895" weight="0.68331444" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4993895" weight="0.21339387" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50061053" side_tool="true" weight="0.84108967" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.20317821" />
@@ -484,96 +602,16 @@
           <properties />
           <option name="timeStamp" value="32" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/concurrent/locks/AbstractQueuedSynchronizer.java</url>
+          <line>870</line>
+          <properties />
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/rt.jar!/sun/nio/ch/Interruptible.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/rt.jar!/java/nio/channels/spi/AbstractInterruptibleChannel.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#2624#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/rt.jar!/java/nio/channels/spi/AbstractSelector.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/nio/channels/spi/AbstractSelector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="55" column="2" lean-forward="true" selection-start-line="55" selection-start-column="2" selection-end-line="55" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="381" column="33" selection-start-line="381" selection-start-column="24" selection-end-line="381" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicthread/Demo4.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="78" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicthread/SleepAndJoinDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-961">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicthread/JoinDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="281" column="30" selection-start-line="281" selection-start-column="30" selection-end-line="281" selection-end-column="30" />
-          <folding>
-            <element signature="e#33588#33589#0" expanded="true" />
-            <element signature="e#33645#33646#0" expanded="true" />
-            <element signature="e#36709#36710#0" expanded="true" />
-            <element signature="e#36767#36768#0" expanded="true" />
-            <element signature="e#37304#37305#0" expanded="true" />
-            <element signature="e#37347#37348#0" expanded="true" />
-            <element signature="e#38621#38622#0" expanded="true" />
-            <element signature="e#38666#38667#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicthread/YiedDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicthread/ImplThreadDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/threadsafe/SingletonThreadSafe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1064">
@@ -655,13 +693,6 @@
             <element signature="e#2598#2599#0" expanded="true" />
             <element signature="e#2622#2623#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/rt.jar!/sun/misc/Unsafe.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="305" column="94" lean-forward="true" selection-start-line="305" selection-start-column="32" selection-end-line="305" selection-end-column="94" />
         </state>
       </provider>
     </entry>
@@ -969,15 +1000,248 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicthread/JoinDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3284">
+          <caret line="189" column="16" selection-start-line="189" selection-start-column="16" selection-end-line="189" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/collection/HashMapUnsafe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        <state relative-caret-position="433">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="300" column="47" selection-start-line="300" selection-start-column="41" selection-end-line="300" selection-end-column="47" />
+          <folding>
+            <element signature="e#33588#33589#0" expanded="true" />
+            <element signature="e#33645#33646#0" expanded="true" />
+            <element signature="e#36709#36710#0" expanded="true" />
+            <element signature="e#36767#36768#0" expanded="true" />
+            <element signature="e#37304#37305#0" expanded="true" />
+            <element signature="e#37347#37348#0" expanded="true" />
+            <element signature="e#38621#38622#0" expanded="true" />
+            <element signature="e#38666#38667#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/rt.jar!/sun/misc/Unsafe.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="353" column="23" selection-start-line="353" selection-start-column="23" selection-end-line="353" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/concurrent/locks/AbstractOwnableSynchronizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+          <folding>
+            <element signature="e#1663#1664#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/concurrent/locks/Lock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="334" column="9" selection-start-line="334" selection-start-column="9" selection-end-line="334" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/FailLock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/AQSSourceAnalyse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="1205" column="25" selection-start-line="1205" selection-start-column="25" selection-end-line="1205" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5432#5433#0" expanded="true" />
+            <element signature="e#5483#5484#0" expanded="true" />
+            <element signature="e#7123#7124#0" expanded="true" />
+            <element signature="e#7151#7152#0" expanded="true" />
+            <element signature="e#7388#7389#0" expanded="true" />
+            <element signature="e#7420#7421#0" expanded="true" />
+            <element signature="e#18192#18193#0" expanded="true" />
+            <element signature="e#27773#27774#0" expanded="true" />
+            <element signature="e#29030#29031#0" expanded="true" />
+            <element signature="e#30951#30952#0" expanded="true" />
+            <element signature="e#32193#32194#0" expanded="true" />
+            <element signature="e#33008#33009#0" expanded="true" />
+            <element signature="e#41138#41139#0" expanded="true" />
+            <element signature="e#41529#41530#0" expanded="true" />
+            <element signature="e#46327#46335#0" expanded="true" />
+            <element signature="e#46950#46958#0" expanded="true" />
+            <element signature="e#47622#47630#0" expanded="true" />
+            <element signature="e#55194#55195#0" expanded="true" />
+            <element signature="e#71365#71366#0" expanded="true" />
+            <element signature="e#71408#71409#0" expanded="true" />
+            <element signature="e#73651#73659#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/ReentrantLockSourceAnalyse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="162" column="42" lean-forward="true" selection-start-line="162" selection-start-column="42" selection-end-line="162" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5085#5086#0" expanded="true" />
+            <element signature="e#5125#5126#0" expanded="true" />
+            <element signature="e#5713#5714#0" expanded="true" />
+            <element signature="e#5791#5792#0" expanded="true" />
+            <element signature="e#6026#6027#0" expanded="true" />
+            <element signature="e#6053#6054#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/concurrent/locks/ReentrantLock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="236" column="28" selection-start-line="236" selection-start-column="28" selection-end-line="236" selection-end-column="28" />
+          <folding>
+            <element signature="e#7116#7117#0" expanded="true" />
+            <element signature="e#7150#7151#0" expanded="true" />
+            <element signature="e#8176#8177#0" expanded="true" />
+            <element signature="e#8216#8217#0" expanded="true" />
+            <element signature="e#8451#8452#0" expanded="true" />
+            <element signature="e#8515#8516#0" expanded="true" />
+            <element signature="e#9117#9118#0" expanded="true" />
+            <element signature="e#9144#9145#0" expanded="true" />
+            <element signature="e#15850#15851#0" expanded="true" />
+            <element signature="e#15881#15882#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/concurrent/locks/AbstractQueuedSynchronizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="687">
+          <caret line="881" column="7" lean-forward="true" selection-start-line="881" selection-start-column="7" selection-end-line="881" selection-end-column="7" />
+          <folding>
+            <element signature="e#22675#22676#0" expanded="true" />
+            <element signature="e#22703#22704#0" expanded="true" />
+            <element signature="e#32644#32645#0" expanded="true" />
+            <element signature="e#32694#32695#0" expanded="true" />
+            <element signature="e#41392#41393#0" expanded="true" />
+            <element signature="e#41449#41450#0" expanded="true" />
+            <element signature="e#42562#42563#0" expanded="true" />
+            <element signature="e#42619#42620#0" expanded="true" />
+            <element signature="e#85889#85890#0" expanded="true" />
+            <element signature="e#85959#85960#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/faillock.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="587">
+          <caret line="119" column="64" selection-start-line="119" selection-start-column="64" selection-end-line="119" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>design-pattern</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: cglib:cglib:3.1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
