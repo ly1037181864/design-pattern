@@ -973,6 +973,9 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
      *            and can represent anything you like.
      */
     public final void acquireShared(int arg) {
+        //尝试获取读锁
+        //首次返回的是1 加锁成功
+        //第二个线程在来加锁还是读锁
         if (tryAcquireShared(arg) < 0)
             doAcquireShared(arg);
     }
@@ -1033,7 +1036,10 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
      * @return the value returned from {@link #tryReleaseShared}
      */
     public final boolean releaseShared(int arg) {
-        if (tryReleaseShared(arg)) {
+        //尝试释放锁，如果当前只有一个线程即firstReader == current成立只需要清空firstReader并且复位firstReader的计数器为1
+        //如果当前是多个线程，则需要清除当前线程上的计数器，如果当前线程多次获得锁，则对计数器进行--操作，知道复位为1时，清除当前线程的计数器
+        //设置当前锁的状态，对高位进行-1操作，加锁的时候是对高位+1操作，此处正好相反，如果锁的状态复位为0，则返回true，否则是false
+        if (tryReleaseShared(arg)) {//如果释放锁成功，所有线程上的读锁都全部释放
             doReleaseShared();
             return true;
         }
