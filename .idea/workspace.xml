@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c464f76-259a-4567-ad61-78cb513ddf92" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/wn/Prod_Cons_Condition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/wn/Prod_Cons_Tradition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/ReadOnWriteLock.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/ReadOnWriteLock.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,90 +22,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/ReadOnWriteLock.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/ReadOnWriteLockSourceAnalyse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="777" column="30" selection-start-line="777" selection-start-column="17" selection-end-line="777" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1355#1356#0" expanded="true" />
-                <element signature="e#1388#1389#0" expanded="true" />
-                <element signature="e#1465#1466#0" expanded="true" />
-                <element signature="e#1498#1499#0" expanded="true" />
-                <element signature="e#2425#2426#0" expanded="true" />
-                <element signature="e#2474#2475#0" expanded="true" />
-                <element signature="e#2612#2613#0" expanded="true" />
-                <element signature="e#2661#2662#0" expanded="true" />
-                <element signature="e#18780#18781#0" expanded="true" />
-                <element signature="e#18832#18833#0" expanded="true" />
-                <element signature="e#19121#19122#0" expanded="true" />
-                <element signature="e#19175#19176#0" expanded="true" />
-                <element signature="e#19216#19217#0" expanded="true" />
-                <element signature="e#19278#19279#0" expanded="true" />
-                <element signature="e#19319#19320#0" expanded="true" />
-                <element signature="e#19402#19403#0" expanded="true" />
-                <element signature="e#20342#20343#0" expanded="true" />
-                <element signature="e#20383#20384#0" expanded="true" />
-                <element signature="e#20626#20627#0" expanded="true" />
-                <element signature="e#20690#20691#0" expanded="true" />
-                <element signature="e#21488#21489#0" expanded="true" />
-                <element signature="e#21542#21543#0" expanded="true" />
-                <element signature="e#21605#21606#0" expanded="true" />
-                <element signature="e#21659#21660#0" expanded="true" />
-                <element signature="e#22688#22689#0" expanded="true" />
-                <element signature="e#22733#22734#0" expanded="true" />
-                <element signature="e#28959#28960#0" expanded="true" />
-                <element signature="e#29004#29005#0" expanded="true" />
-                <element signature="e#31207#31208#0" expanded="true" />
-                <element signature="e#31246#31247#0" expanded="true" />
-                <element signature="e#39041#39042#0" expanded="true" />
-                <element signature="e#39080#39081#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/AQSSourceAnalyse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="337" column="17" selection-start-line="337" selection-start-column="17" selection-end-line="337" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#7281#7282#0" expanded="true" />
-                <element signature="e#7309#7310#0" expanded="true" />
-                <element signature="e#18142#18143#0" expanded="true" />
-                <element signature="e#18192#18193#0" expanded="true" />
-                <element signature="e#27716#27717#0" expanded="true" />
-                <element signature="e#27773#27774#0" expanded="true" />
-                <element signature="e#28973#28974#0" expanded="true" />
-                <element signature="e#29030#29031#0" expanded="true" />
-                <element signature="e#30894#30895#0" expanded="true" />
-                <element signature="e#30951#30952#0" expanded="true" />
-                <element signature="e#32136#32137#0" expanded="true" />
-                <element signature="e#32193#32194#0" expanded="true" />
-                <element signature="e#32951#32952#0" expanded="true" />
-                <element signature="e#33008#33009#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/ReadOnWriteLock.txt">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/wn/Prod_Cons_Tradition.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="408" column="6" lean-forward="true" selection-start-line="408" selection-start-column="6" selection-end-line="408" selection-end-column="6" />
+            <state relative-caret-position="609">
+              <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/wn/Prod_Cons_Condition.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="373">
+              <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2182#2183#0" expanded="true" />
+                <element signature="e#2209#2210#0" expanded="true" />
+                <element signature="e#2318#2319#0" expanded="true" />
+                <element signature="e#2345#2346#0" expanded="true" />
+                <element signature="e#2447#2448#0" expanded="true" />
+                <element signature="e#2473#2474#0" expanded="true" />
+                <element signature="e#3050#3051#0" expanded="true" />
+                <element signature="e#3080#3081#0" expanded="true" />
+                <element signature="e#3243#3244#0" expanded="true" />
+                <element signature="e#3276#3277#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -149,8 +93,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/observer/v2/mouseevent/Keybord.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/observer/v2/MouseEventTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/observer/v2/mouseevent/MouseEventCallback.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/observer/v4/MouseEventCallback.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/observer/v4/Event.java" />
@@ -200,6 +142,8 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/AQSSourceAnalyse.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/ReadOnWriteLock.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/ReadOnWriteLock.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/wn/Prod_Cons_Condition.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/wn/Prod_Cons_Tradition.java" />
       </list>
     </option>
   </component>
@@ -284,7 +228,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="multithread" type="462c0819:PsiDirectoryNode" />
-              <item name="lock" type="462c0819:PsiDirectoryNode" />
+              <item name="wn" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="design-pattern" type="b2602c69:ProjectViewProjectNode" />
@@ -302,7 +246,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561969543305" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561979007647" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -338,7 +282,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ReadOnWriteLock">
+  <component name="RunManager" selected="Application.Prod_Cons_Condition">
     <configuration name="FailLock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.topideal.com.multithread.lock.FailLock" />
       <module name="design-pattern" />
@@ -365,12 +309,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HashSetUnsafe" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.topideal.com.multithread.collection.HashSetUnsafe" />
+    <configuration name="Prod_Cons_Condition" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.topideal.com.multithread.wn.Prod_Cons_Condition" />
       <module name="design-pattern" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cn.topideal.com.multithread.collection.*" />
+          <option name="PATTERN" value="cn.topideal.com.multithread.wn.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -378,12 +322,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LinkedListUnsafe" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.topideal.com.multithread.collection.LinkedListUnsafe" />
+    <configuration name="Prod_Cons_Tradition" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.topideal.com.multithread.wn.Prod_Cons_Tradition" />
       <module name="design-pattern" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cn.topideal.com.multithread.collection.*" />
+          <option name="PATTERN" value="cn.topideal.com.multithread.wn.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -406,11 +350,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Prod_Cons_Condition" />
+        <item itemvalue="Application.Prod_Cons_Tradition" />
         <item itemvalue="Application.ReadOnWriteLock" />
         <item itemvalue="Application.FailLock" />
         <item itemvalue="Application.HashMapUnsafe" />
-        <item itemvalue="Application.HashSetUnsafe" />
-        <item itemvalue="Application.LinkedListUnsafe" />
       </list>
     </recent_temporary>
   </component>
@@ -434,7 +378,7 @@
       <workItem from="1561511398935" duration="9493000" />
       <workItem from="1561598766108" duration="22536000" />
       <workItem from="1561640166558" duration="35809000" />
-      <workItem from="1561888455284" duration="19613000" />
+      <workItem from="1561888455284" duration="27583000" />
     </task>
     <task id="LOCAL-00001" summary="原型模式">
       <created>1561105176784</created>
@@ -447,13 +391,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="211224000" />
+    <option name="totallyTimeSpent" value="219194000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="973" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.861521" weight="0.2765568" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.861521" weight="0.1923077" />
       <window_info id="Structure" order="1" sideWeight="0.138479" side_tool="true" weight="0.26862028" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -462,12 +406,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291714" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" weight="0.17139614" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.2292849" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" weight="0.9659478" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.059023835" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4993895" weight="0.5834279" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4993895" weight="0.8422247" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50061053" side_tool="true" weight="0.84108967" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.20317821" />
@@ -605,37 +549,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/threadsafe/VolatileDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <element signature="e#654#655#0" expanded="true" />
-            <element signature="e#682#683#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/vol/VolatileThreadSafe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
-          <folding>
-            <element signature="e#1184#1185#0" expanded="true" />
-            <element signature="e#1212#1213#0" expanded="true" />
-            <element signature="e#1255#1256#0" expanded="true" />
-            <element signature="e#1289#1290#0" expanded="true" />
-            <element signature="e#1414#1415#0" expanded="true" />
-            <element signature="e#1443#1444#0" expanded="true" />
-            <element signature="e#1488#1489#0" expanded="true" />
-            <element signature="e#1524#1525#0" expanded="true" />
-            <element signature="e#2856#2857#0" expanded="true" />
-            <element signature="e#2598#2599#0" expanded="true" />
-            <element signature="e#2622#2623#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/cas/AtomicIntegerCasDemo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -1127,7 +1040,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/ReadOnWriteLockSourceAnalyse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
-          <caret line="777" column="30" selection-start-line="777" selection-start-column="17" selection-end-line="777" selection-end-column="30" />
+          <caret line="1032" column="24" selection-start-line="1032" selection-start-column="17" selection-end-line="1032" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1355#1356#0" expanded="true" />
@@ -1168,8 +1081,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/AQSSourceAnalyse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="337" column="17" selection-start-line="337" selection-start-column="17" selection-end-line="337" selection-end-column="17" />
+        <state relative-caret-position="467">
+          <caret line="977" column="31" selection-start-line="977" selection-start-column="16" selection-end-line="977" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#7281#7282#0" expanded="true" />
@@ -1192,8 +1105,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/ReadOnWriteLock.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="408" column="6" lean-forward="true" selection-start-line="408" selection-start-column="6" selection-end-line="408" selection-end-column="6" />
+        <state relative-caret-position="113">
+          <caret line="410" column="18" selection-start-line="410" selection-start-column="18" selection-end-line="410" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/wn/Prod_Cons_Condition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2182#2183#0" expanded="true" />
+            <element signature="e#2209#2210#0" expanded="true" />
+            <element signature="e#2318#2319#0" expanded="true" />
+            <element signature="e#2345#2346#0" expanded="true" />
+            <element signature="e#2447#2448#0" expanded="true" />
+            <element signature="e#2473#2474#0" expanded="true" />
+            <element signature="e#3050#3051#0" expanded="true" />
+            <element signature="e#3080#3081#0" expanded="true" />
+            <element signature="e#3243#3244#0" expanded="true" />
+            <element signature="e#3276#3277#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/wn/Prod_Cons_Tradition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
         </state>
       </provider>
     </entry>
