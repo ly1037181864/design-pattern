@@ -883,6 +883,7 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
         //尝试获取锁 如果获取锁成功，逻辑结束，如果获取锁失败 接着&&的逻辑
         if (!tryAcquire(arg) &&
                 //获取锁失败后 将当前线程构建一个Note对象并加入同步队列 同时标记为独占
+                //这里的逻辑跟AQS的一样
                 acquireQueued(addWaiter(Node.EXCLUSIVE), arg))
             //线程被挂起过，这里设置中断状态
             selfInterrupt();
@@ -1040,6 +1041,7 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
         //如果当前是多个线程，则需要清除当前线程上的计数器，如果当前线程多次获得锁，则对计数器进行--操作，知道复位为1时，清除当前线程的计数器
         //设置当前锁的状态，对高位进行-1操作，加锁的时候是对高位+1操作，此处正好相反，如果锁的状态复位为0，则返回true，否则是false
         if (tryReleaseShared(arg)) {//如果释放锁成功，所有线程上的读锁都全部释放
+            //如果锁全部释放了，只限于读锁
             doReleaseShared();
             return true;
         }

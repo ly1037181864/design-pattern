@@ -212,16 +212,20 @@ public class ReadOnWriteLockSourceAnalyse implements ReadWriteLock, java.io.Seri
             Thread current = Thread.currentThread();//当前线程
             int c = getState();//当前锁的状态 当前只有读锁的情况下来，并发来了一个写锁请求
             int w = exclusiveCount(c);//读锁在高位，写锁在低位 此时读写锁共存的情况下 w=0
-            if (c != 0) {
+            if (c != 0) {//当前已存在线程获取锁，但这个时候不一定是读锁也不一定是写锁
                 // (Note: if c != 0 and w == 0 then shared count != 0)
+                // 如果当前是读锁获者获取写锁的线程不是当前线程
                 if (w == 0 || current != getExclusiveOwnerThread())
-                    return false;
-                if (w + exclusiveCount(acquires) > MAX_COUNT)
+                    return false;//获取锁失败，读写互斥
+                if (w + exclusiveCount(acquires) > MAX_COUNT)//当前是写锁且获去锁的线程是当前线程
                     throw new Error("Maximum lock count exceeded");
                 // Reentrant acquire
-                setState(c + acquires);
+                setState(c + acquires);//重入锁+1
                 return true;
             }
+            //表示当前为无锁状态，就需要判断是否同步队列中存在等待获取锁的线程，如果有
+            //需要根据是否公平锁来判断是否获取锁失败，如果是非公平锁，那么只需要判断!compareAndSetState(c, c + acquires)是否成功，如果成功获取锁成功，如果失败获取锁失败
+            //如果是公平锁，那么writerShouldBlock()中有等待线程则获取锁失败，如果没有则只要判断!compareAndSetState(c, c + acquires)是否成功是否成功即可，逻辑跟非公平锁一样了
             //判断写是否需要阻塞 判断同步队列中是否存在线程等待锁 当前是没有的
             if (writerShouldBlock() ||
                     //如果之前的state状态为0000 0000 0000 0011 0000 0000 0000 0000 3把读锁 此时如果并发写锁
@@ -295,12 +299,15 @@ public class ReadOnWriteLockSourceAnalyse implements ReadWriteLock, java.io.Seri
             //获取锁的状态，初始值为0
             //再次获取读锁 2<<16 exclusiveCount(c) = 0
             int c = getState();
+            //获取独占锁标记 1<<16 -1得到的二进制为 0000 0000 0000 0000 1111 1111 1111 1111
+            //因为状态标记c是二进制形式存储，如果高16位有1则表示有读的锁，如果低16位表示有写的锁，通过状态进行位与运算，如果结果不等于0则表示之前一定存在写锁
+            //这个时候就需要去判断获得写锁的线程是否是当前线程，如果不是则需要挂起该线程，否则继续后续流程
             if (exclusiveCount(c) != 0 &&
                     getExclusiveOwnerThread() != current)
                 return -1;
             //获取共享锁的状态 首次进入0
             //再次尝试获取读锁，这次无符号右移c由0000 0000 0000 0001 0000 0000 0000 0000 变成0000 0000 0000 0000 0000 0000 0000 0001 即r=1
-            int r = sharedCount(c);
+            int r = sharedCount(c);//表示读锁的数量
             /**
              * 公平锁的逻辑
              * 第一次进入是同步队列是空的，此时返回的是false
