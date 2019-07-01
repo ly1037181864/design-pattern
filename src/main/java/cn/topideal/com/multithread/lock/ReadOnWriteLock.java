@@ -8,14 +8,24 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 public class ReadOnWriteLock extends Thread {
 
     ReentrantReadWriteLock lock;
+    private int num;
 
-    public ReadOnWriteLock(String name, ReentrantReadWriteLock lock) {
+    public ReadOnWriteLock(String name, int num, ReentrantReadWriteLock lock) {
         super(name);
+        this.num = num;
         this.lock = lock;
     }
 
     @Override
     public void run() {
+        if (num % 2 == 0)
+            readLock();//偶数读锁
+        else
+            writeLock();//奇数写锁
+
+    }
+
+    private void writeLock() {
         lock.writeLock().lock();
         try {
             Thread.sleep(2000);
@@ -26,8 +36,6 @@ public class ReadOnWriteLock extends Thread {
         } finally {
             lock.writeLock().unlock();
         }
-
-
     }
 
     private void readLock() {
@@ -45,13 +53,14 @@ public class ReadOnWriteLock extends Thread {
 
     public static void main(String[] args) {
         ReentrantReadWriteLock lock = new ReentrantReadWriteLock(true);
-        ReadOnWriteLock lockA = new ReadOnWriteLock("AA", lock);
+
+        ReadOnWriteLock lockA = new ReadOnWriteLock("AA", 2, lock);//读锁
         lockA.start();
 
-        ReadOnWriteLock lockB = new ReadOnWriteLock("BB", lock);
+        ReadOnWriteLock lockB = new ReadOnWriteLock("BB", 1, lock);//写锁
         lockB.start();
 
-        ReadOnWriteLock lockC = new ReadOnWriteLock("CC", lock);
+        ReadOnWriteLock lockC = new ReadOnWriteLock("CC", 4, lock);//读锁
         lockC.start();
 
     }

@@ -186,11 +186,12 @@ public class ReadOnWriteLockSourceAnalyse implements ReadWriteLock, java.io.Seri
 
         @Override
         protected final boolean tryRelease(int releases) {
+            //当前释放写锁的线程不是占有写锁的线程
             if (!isHeldExclusively())
                 throw new IllegalMonitorStateException();
             int nextc = getState() - releases;
             boolean free = exclusiveCount(nextc) == 0;
-            if (free)
+            if (free)//当前锁全部释放完成
                 setExclusiveOwnerThread(null);
             setState(nextc);
             return free;
@@ -278,6 +279,21 @@ public class ReadOnWriteLockSourceAnalyse implements ReadWriteLock, java.io.Seri
                     "attempt to unlock read lock, not locked by current thread");
         }
 
+        /**
+         * 尝试获取锁
+         * 读读操作，只有读，高16位+1，同时对每个线程上的锁计数器+1，获取锁成功
+         * 写读操作，如果当前读操作前，存在写锁，且获取读锁的线程不是获得写锁的线程，那么获取锁失败
+         * 如果当前读操作前，存在写锁，且获取读锁的线程是当前写锁线程，那么它还会继续走接下来的流程
+         * <p>
+         * 读是否需要阻塞，当前同步队列中不需要阻塞，那么直接获取锁，且将各自线程的锁计数器+1，获取锁成功
+         * 这里需要注意的是如果同一个线程存在写读操作，即获得写锁之后尝试获取读锁，那么不应该阻塞读，因为同
+         * 一个线程的读写操作不存在线程安全问题，所以这里只用判断同步队列里是否存在获取等待锁的线程即可
+         * <p>
+         * 如果需要阻塞当前读则进入fullTryAcquireShared尝试获取共享锁
+         *
+         * @param unused
+         * @return
+         */
         @Override
         protected final int tryAcquireShared(int unused) {
             /*
@@ -350,6 +366,12 @@ public class ReadOnWriteLockSourceAnalyse implements ReadWriteLock, java.io.Seri
         /**
          * Full version of acquire for reads, that handles CAS misses
          * and reentrant reads not dealt with in tryAcquireShared.
+         * 进入该方法的逻辑前提是当前读操作需要阻塞，也就是当前同步队列中存在获取锁的线程，
+         * 但这里需要注意的是当前仅仅只需要读阻塞，还是说当前读操作前也存在写操作，且读写
+         * 为同一个线程
+         *
+         * 如果当前读操作前存在写操作，那么它会尝试对各自线程的读锁计数器+1，且获取锁成功
+         * 如果当前仅仅只是读阻塞，那么获取锁失败
          */
         final int fullTryAcquireShared(Thread current) {
             /*
@@ -360,32 +382,32 @@ public class ReadOnWriteLockSourceAnalyse implements ReadWriteLock, java.io.Seri
              */
             HoldCounter rh = null;
             for (; ; ) {
-                int c = getState();
-                if (exclusiveCount(c) != 0) {
-                    if (getExclusiveOwnerThread() != current)
-                        return -1;
+                int c = getState();//获取锁的状态
+                if (exclusiveCount(c) != 0) {//是否有线程独占锁
+                    if (getExclusiveOwnerThread() != current)//独占锁线程不是当前线程
+                        return -1;//获取锁失败 写操作之后，有线程获取读锁，但又不是获取写锁的线程来获取读锁，那么此时就需要阻塞当前读操作
                     // else we hold the exclusive lock; blocking here
                     // would cause deadlock.
-                } else if (readerShouldBlock()) {
+                } else if (readerShouldBlock()) {//同步队列中有其他线程等待锁，此时需要阻塞读
                     // Make sure we're not acquiring read lock reentrantly
-                    if (firstReader == current) {
+                    if (firstReader == current) {//如果当前线程是首次获取读锁的线程，那么只需要在后续的流程中对firstReaderHoldCount++操作;
                         // assert firstReaderHoldCount > 0;
-                    } else {
+                    } else {//其他线程尝试获取读锁
                         if (rh == null) {
                             rh = cachedHoldCounter;
                             if (rh == null || rh.tid != getThreadId(current)) {
                                 rh = readHolds.get();
-                                if (rh.count == 0)
+                                if (rh.count == 0)//如果该线程是首次获取读锁
                                     readHolds.remove();
                             }
                         }
-                        if (rh.count == 0)
+                        if (rh.count == 0)//获取锁失败，需要阻塞当前读操作
                             return -1;
                     }
                 }
                 if (sharedCount(c) == MAX_COUNT)
                     throw new Error("Maximum lock count exceeded");
-                if (compareAndSetState(c, c + SHARED_UNIT)) {
+                if (compareAndSetState(c, c + SHARED_UNIT)) {//各自线程的锁计数器+1
                     if (sharedCount(c) == 0) {
                         firstReader = current;
                         firstReaderHoldCount = 1;

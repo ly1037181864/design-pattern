@@ -292,7 +292,7 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
      */
     private void setHead(Node node) {
         head = node;//将当前note节点设置为头节点
-        node.thread = null;//清空线程信息
+        node.thread = null;//清空线程信息 因为当前线程已经是唤醒的线程且是头节点了，所以需要清空里面的线程信息及前一个节点信息
         node.prev = null;//清空note节点的头节点信息，因为head节点没有头节点
     }
 
@@ -349,11 +349,17 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
          */
         for (; ; ) {
             Node h = head;
-            if (h != null && h != tail) {
+            if (h != null && h != tail) {//同步队列中存在其他等待线程
                 int ws = h.waitStatus;
-                if (ws == Node.SIGNAL) {
+                //这里为什么还要再次判断，是因为第一次构建Note 节点时，Note状态为0之后每一次阻塞都会将新增的Note节点的前一个节点的状态更新为-1
+                //同时在释放的时候，会将head节点复原，同时唤醒head节点的下一个节点
+                //而唤醒下一个节点时，唤醒的线程会尝试再次去获取锁，获得锁成功后，会将头节点替换，这个时候就可能存在被唤醒的Note节点因为刚获得锁
+                //还没有将新的head节点状态复位，所以这里就需要再次复位，并唤醒下一个线程
+                if (ws == Node.SIGNAL) {//如果等待状态为-1
+                    //尝试将状态复位为0，如果失败继续循环复位
                     if (!compareAndSetWaitStatus(h, Node.SIGNAL, 0))
                         continue;            // loop to recheck cases
+                    //如果成功 唤醒head节点的下一个节点
                     unparkSuccessor(h);
                 } else if (ws == 0 &&
                         !compareAndSetWaitStatus(h, 0, Node.PROPAGATE))
@@ -391,9 +397,12 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
          * racing acquires/releases, so most need signals now or soon
          * anyway.
          */
+        //如果多个线程获取到了共享锁或者是头节点为空，或者是头节点的状态<0
         if (propagate > 0 || h == null || h.waitStatus < 0 ||
                 (h = head) == null || h.waitStatus < 0) {
             Node s = node.next;
+            //如果当前note节点的下一个节点为空或者是下一个节点是共享节点时
+            //这里会去循环释放掉所有共享锁，也就是只释放读的
             if (s == null || s.isShared())
                 doReleaseShared();
         }
@@ -628,17 +637,25 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
      * Acquires in shared uninterruptible mode.
      *
      * @param arg the acquire argument
+     *
+     * 读锁尝试获取锁失败
      */
     private void doAcquireShared(int arg) {
+        //构建共享的Note节点
         final Node node = addWaiter(Node.SHARED);
         boolean failed = true;
         try {
             boolean interrupted = false;
             for (; ; ) {
+                //当前节点的前一个节点
                 final Node p = node.predecessor();
+                //如果当前的前一个节点是head节点
                 if (p == head) {
+                    //再次去尝试获取锁
+                    // 被挂起的线程被唤醒后再次尝试获取锁
                     int r = tryAcquireShared(arg);
-                    if (r >= 0) {
+                    if (r >= 0) {//获取成功
+                        //修改同步队列的head节点信息
                         setHeadAndPropagate(node, r);
                         p.next = null; // help GC
                         if (interrupted)
@@ -647,6 +664,8 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
                         return;
                     }
                 }
+                //索取锁失败 将当前note节点的前一个节点的状态设置为-1，并挂起当前节点
+                //挂起的线程在其他线程释放锁后再次被唤醒后
                 if (shouldParkAfterFailedAcquire(p, node) &&
                         parkAndCheckInterrupt())
                     interrupted = true;
@@ -972,6 +991,8 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
      * @param arg the acquire argument.  This value is conveyed to
      *            {@link #tryAcquireShared} but is otherwise uninterpreted
      *            and can represent anything you like.
+     *
+     * 尝试获取锁，如果获取锁失败则会构建同步队列并挂起当前线程
      */
     public final void acquireShared(int arg) {
         //尝试获取读锁

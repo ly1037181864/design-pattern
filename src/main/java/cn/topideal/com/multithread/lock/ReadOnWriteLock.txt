@@ -1,0 +1,66 @@
+//读写锁的原理分析 公平锁原理
+//只有读锁
+public void lock() {
+    //获取共享锁
+    sync.acquireShared(1);
+}
+
+public final void acquireShared(int arg) {
+    //尝试获取读锁
+    //首次返回的是1 加锁成功
+    //第二个线程在来加锁还是读锁
+    if (tryAcquireShared(arg) < 0)
+        doAcquireShared(arg);
+}
+protected final int tryAcquireShared(int unused) {
+    Thread current = Thread.currentThread();//获取当前线程
+    //获取锁的状态，初始值为0
+    //再次获取读锁 2<<16 exclusiveCount(c) = 0
+    int c = getState();
+    //获取独占锁标记 1<<16 -1得到的二进制为 0000 0000 0000 0000 1111 1111 1111 1111
+    //因为状态标记c是二进制形式存储，如果高16位有1则表示有读的锁，如果低16位表示有写的锁，通过状态进行位与运算，如果结果不等于0则表示之前一定存在写锁
+    //这个时候就需要去判断获得写锁的线程是否是当前线程，如果不是则需要挂起该线程，否则继续后续流程
+    if (exclusiveCount(c) != 0 &&
+            getExclusiveOwnerThread() != current)
+        return -1;
+    //获取共享锁的状态 首次进入0
+    //再次尝试获取读锁，这次无符号右移c由0000 0000 0000 0001 0000 0000 0000 0000 变成0000 0000 0000 0000 0000 0000 0000 0001 即r=1
+    int r = sharedCount(c);//表示读锁的数量
+    /**
+     * 公平锁的逻辑
+     * 第一次进入是同步队列是空的，此时返回的是false
+     *
+     * 非公平锁的锁机
+     * 第一次进入同步队列是空的，此时返回的是false
+     * 再次获取读锁的时候，同步队列仍然为空，此时返回的还是false
+     */
+    if (!readerShouldBlock() &&
+            //首次获取读锁 0< 2<<15 -1
+            //再次获取读锁 1< 2<<15 -1
+            r < MAX_COUNT &&
+            //c =0 SHARED_UNIT是1左移16为 也就是0000 0000 0000 0001 0000 0000 0000 0000
+            //读写锁采用是进制来表示，低16为表示写锁，高16为表示读锁
+            //共享锁的状态就是0000 0000 0000 0001 0000 0000 0000 0000
+            //再次设置c的时候，由于之前c等于0000 0000 0000 0001 0000 0000 0000 0000在加上SHARED_UNIT
+            //此时c=0000 0000 0000 0010 0000 0000 0000 0000
+            //如果是第三次获取时c=0000 0000 0000 0011 0000 0000 0000 0000 以此类推，往高位加1
+            compareAndSetState(c, c + SHARED_UNIT)) {//SHARED_UNIT 用二进制表示就是0000 0000 0000 0001 0000 0000 0000 0000
+        if (r == 0) {//首次读r=0
+            firstReader = current;//记录首次加读锁的线程为当前线程
+            firstReaderHoldCount = 1;//记录总加锁的记录数
+        } else if (firstReader == current) {
+            //如果是当前线程再次获取读锁 总加锁的记录数+1
+            firstReaderHoldCount++;
+        } else {
+            //保存读锁的总记录数
+            HoldCounter rh = cachedHoldCounter;
+            if (rh == null || rh.tid != getThreadId(current))
+                cachedHoldCounter = rh = readHolds.get();
+            else if (rh.count == 0)
+                readHolds.set(rh);
+            rh.count++;
+        }
+        return 1;//返回1
+    }
+    return fullTryAcquireShared(current);
+}
