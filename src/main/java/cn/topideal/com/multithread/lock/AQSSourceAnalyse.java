@@ -1021,7 +1021,10 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
             throws InterruptedException {
         if (Thread.interrupted())
             throw new InterruptedException();
-        if (tryAcquireShared(arg) < 0) //如果计数器归0则返回1 否则返回-1
+        //如果计数器归0则返回1 否则返回-1
+        //在Semaphore中，如果尝试获取锁的线程数超过计数器的大小，那么后面尝试获取锁的线程必然返回负数
+        //当然还有还有就是公平锁中，如果当前队列中已经存在等待获取锁的线程，那么直接返回-1
+        if (tryAcquireShared(arg) < 0)
             doAcquireSharedInterruptibly(arg);
     }
 
