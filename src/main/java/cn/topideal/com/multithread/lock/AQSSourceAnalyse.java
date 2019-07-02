@@ -683,13 +683,13 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
      */
     private void doAcquireSharedInterruptibly(int arg)
             throws InterruptedException {
-        final Node node = addWaiter(Node.SHARED);
+        final Node node = addWaiter(Node.SHARED);//构建共享note节点
         boolean failed = true;
         try {
             for (; ; ) {
                 final Node p = node.predecessor();
                 if (p == head) {
-                    int r = tryAcquireShared(arg);
+                    int r = tryAcquireShared(arg);//计数器归0 返回1 否则返回-1
                     if (r >= 0) {
                         setHeadAndPropagate(node, r);
                         p.next = null; // help GC
@@ -697,6 +697,7 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
                         return;
                     }
                 }
+                //如果计数器没有归0 则会挂起当前线程 并将当前节点的前一个节点的状态归0
                 if (shouldParkAfterFailedAcquire(p, node) &&
                         parkAndCheckInterrupt())
                     throw new InterruptedException();
@@ -1020,7 +1021,7 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
             throws InterruptedException {
         if (Thread.interrupted())
             throw new InterruptedException();
-        if (tryAcquireShared(arg) < 0)
+        if (tryAcquireShared(arg) < 0) //如果计数器归0则返回1 否则返回-1
             doAcquireSharedInterruptibly(arg);
     }
 
@@ -1362,6 +1363,7 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
      * @return true if is reacquiring
      */
     final boolean isOnSyncQueue(Node node) {
+        //该节点在等待队列中，node.prev == null是因为addConditionWaiter()构建的是单向队列
         if (node.waitStatus == Node.CONDITION || node.prev == null)
             return false;
         if (node.next != null) // If has successor, it must be on queue
@@ -1373,6 +1375,9 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
          * will always be near the tail in calls to this method, and
          * unless the CAS failed (which is unlikely), it will be
          * there, so we hardly ever traverse much.
+         *
+         * 这句话的意思是node.prev如果不是non-null，但还没有在同步队列中，是因为CAS在更新的时候失败了，所以还是需要去遍历一遍
+         * 同步队列，如果当前Note在同步队列中，则返回true，否则返回false
          */
         return findNodeFromTail(node);
     }
@@ -1384,11 +1389,11 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
      * @return true if present
      */
     private boolean findNodeFromTail(Node node) {
-        Node t = tail;
+        Node t = tail;//从队尾开始遍历
         for (; ; ) {
-            if (t == node)
+            if (t == node)//如果存在则返回false
                 return true;
-            if (t == null)
+            if (t == null)//不存在返回false
                 return false;
             t = t.prev;
         }
@@ -1405,6 +1410,7 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
     final boolean transferForSignal(Node node) {
         /*
          * If cannot change waitStatus, the node has been cancelled.
+         * 如果对note节点复位失败，则表示当前已经取消了
          */
         if (!compareAndSetWaitStatus(node, Node.CONDITION, 0))
             return false;
@@ -1415,9 +1421,9 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
          * attempt to set waitStatus fails, wake up to resync (in which
          * case the waitStatus can be transiently and harmlessly wrong).
          */
-        Node p = enq(node);
-        int ws = p.waitStatus;
-        if (ws > 0 || !compareAndSetWaitStatus(p, ws, Node.SIGNAL))
+        Node p = enq(node);//将当前节点加入到同步队列中
+        int ws = p.waitStatus;//当前节点的状态为0
+        if (ws > 0 || !compareAndSetWaitStatus(p, ws, Node.SIGNAL))//将当前节点的状态设置为-1
             LockSupport.unpark(node.thread);
         return true;
     }
@@ -1430,7 +1436,9 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
      * @return true if cancelled before the node was signalled
      */
     final boolean transferAfterCancelledWait(Node node) {
+        //将等待队列中的note状态复位为0
         if (compareAndSetWaitStatus(node, Node.CONDITION, 0)) {
+            //将该note添加到同步队列中
             enq(node);
             return true;
         }
@@ -1588,12 +1596,13 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
          * @return its new wait node
          */
         private Node addConditionWaiter() {
-            Node t = lastWaiter;
+            Node t = lastWaiter;//等待队列中尾节点
             // If lastWaiter is cancelled, clean out.
-            if (t != null && t.waitStatus != Node.CONDITION) {
+            if (t != null && t.waitStatus != Node.CONDITION) {//如果尾节点存在且状态不是等待状态
                 unlinkCancelledWaiters();
                 t = lastWaiter;
             }
+            //构建当前节点加入等待队列
             Node node = new Node(Thread.currentThread(), Node.CONDITION);
             if (t == null)
                 firstWaiter = node;
@@ -1612,10 +1621,10 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
          */
         private void doSignal(Node first) {
             do {
-                if ((firstWaiter = first.nextWaiter) == null)
+                if ((firstWaiter = first.nextWaiter) == null)//从队首开始唤醒
                     lastWaiter = null;
                 first.nextWaiter = null;
-            } while (!transferForSignal(first) &&
+            } while (!transferForSignal(first) && //将当前first节点加入到同步队列中去
                     (first = firstWaiter) != null);
         }
 
@@ -1647,23 +1656,26 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
          * particular target to unlink all pointers to garbage nodes
          * without requiring many re-traversals during cancellation
          * storms.
+         *
+         * 判断等待队列的最后一个节点的状态是否是-2
          */
         private void unlinkCancelledWaiters() {
-            Node t = firstWaiter;
-            Node trail = null;
+            Node t = firstWaiter;//等待队列的头节点
+            Node trail = null;//当前节点的前一个节点
             while (t != null) {
-                Node next = t.nextWaiter;
-                if (t.waitStatus != Node.CONDITION) {
-                    t.nextWaiter = null;
-                    if (trail == null)
-                        firstWaiter = next;
-                    else
-                        trail.nextWaiter = next;
-                    if (next == null)
-                        lastWaiter = trail;
+                //这个循环的目的就是将当前不是-2状态的note节点从等待队列中清除出去
+                Node next = t.nextWaiter;//当前节点的下一个节点
+                if (t.waitStatus != Node.CONDITION) {//如果当前节点的状态不是等待状态
+                    t.nextWaiter = null;//清除当前节点的下一个节点
+                    if (trail == null)//如果第一次循环就找到了，说明队首note节点的状态不为-2
+                        firstWaiter = next;//则之间将队首的下一个节点赋值为队首，清除原队首节点
+                    else //如果当前节点的上一个节点存在，则说明循环到当前节点前，队列的状态都是等待状态，只有当前节点的状态不为等待状态
+                        trail.nextWaiter = next;//这个时候需要将前一个当前节点的前一个节点指向当前节点的下一个节点，即从队列中清除当前节点
+                    if (next == null) //如果当前节点的下一个节点为空，说明当前节点是队尾元素
+                        lastWaiter = trail;//则直接将上一个节点加入到队尾
                 } else
-                    trail = t;
-                t = next;
+                    trail = t;//如果当前节点的状态是等待状态，那么将当前节点赋值给trail，作为下一次循环时的当前节点的上一个节点
+                t = next;//进入下一次循环
             }
         }
 
@@ -1679,9 +1691,9 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
          */
         @Override
         public final void signal() {
-            if (!isHeldExclusively())
+            if (!isHeldExclusively())//如果获取锁的线程不是当前唤醒线程则抛出异常，也就意味者唤醒需要获得锁
                 throw new IllegalMonitorStateException();
-            Node first = firstWaiter;
+            Node first = firstWaiter;//从等待队列的队首开始唤醒
             if (first != null)
                 doSignal(first);
         }
@@ -1749,7 +1761,8 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
          * 0 if not interrupted.
          */
         private int checkInterruptWhileWaiting(Node node) {
-            return Thread.interrupted() ?
+            return Thread.interrupted() ? //在线程挂起期间是否收到线程中断请求
+                    //如果收到过中断请求 如果将note添加到同步队列成功则抛出异常，否则需要重新发起中断
                     (transferAfterCancelledWait(node) ? THROW_IE : REINTERRUPT) :
                     0;
         }
@@ -1781,21 +1794,25 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
          */
         @Override
         public final void await() throws InterruptedException {
-            if (Thread.interrupted())
+            //如果当前线程一种中断，则抛出中断异常，跟wait、sleep逻辑一样，区别在于一个是虚拟机实现的，一个是API实现的
+            if (Thread.interrupted())//中断前对线程状态进行复位
                 throw new InterruptedException();
-            Node node = addConditionWaiter();
-            int savedState = fullyRelease(node);
+            Node node = addConditionWaiter();//构建等待队列
+            int savedState = fullyRelease(node);//释放锁
             int interruptMode = 0;
-            while (!isOnSyncQueue(node)) {
-                LockSupport.park(this);
-                if ((interruptMode = checkInterruptWhileWaiting(node)) != 0)
+            while (!isOnSyncQueue(node)) {//判断当前Note节点是否在同步队列中，如果不存在则进入循环
+                LockSupport.park(this);//挂起当前线程
+                //线程如果发起过中断请求，那么只要note状态复位0成功就会加入到同步队列中去，这个时候就会返回-1，否则是1，如果线程未发起中断请求，那么返回的就是0
+                //线程只要发起中断请求才能退出循环，否则再次进入循环后将被再次挂起
+                if ((interruptMode = checkInterruptWhileWaiting(node)) != 0) //如果挂起期间收到过中断请求，那么interruptMode要么等于1要么等于-1并终止循环
                     break;
             }
+            //尝试获取锁
             if (acquireQueued(node, savedState) && interruptMode != THROW_IE)
                 interruptMode = REINTERRUPT;
             if (node.nextWaiter != null) // clean up if cancelled
                 unlinkCancelledWaiters();
-            if (interruptMode != 0)
+            if (interruptMode != 0) //对中断响应的处理
                 reportInterruptAfterWait(interruptMode);
         }
 
