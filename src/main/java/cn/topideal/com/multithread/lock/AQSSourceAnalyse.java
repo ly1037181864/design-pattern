@@ -1838,13 +1838,16 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
             int savedState = fullyRelease(node);
             final long deadline = System.nanoTime() + nanosTimeout;
             int interruptMode = 0;
-            while (!isOnSyncQueue(node)) {
-                if (nanosTimeout <= 0L) {
-                    transferAfterCancelledWait(node);
+            while (!isOnSyncQueue(node)) {//如果设定的挂起时间大于指定时间，那么指定时间挂起，否则不必挂起，而是通过循环的方式，让CPU执行并在条件不满足时释放CPU时间片，
+                // 通过这样的形式来减少线程的上下文切换
+                if (nanosTimeout <= 0L) {//如果未设置超时时间或超时时间为0，那么直接将note添加到等待队列，并退出循环
+                    transferAfterCancelledWait(node);//note加入队列后cpu空转，直到调用signal或者signalAll方法，将等待note放入同步队列中
                     break;
                 }
+                //如果制定等待时间超过spinForTimeoutThreshold给定时间，那么直接挂起指定等待时间 spinForTimeoutThreshold挂起的时间太短，就没有必要挂起
                 if (nanosTimeout >= spinForTimeoutThreshold)
                     LockSupport.parkNanos(this, nanosTimeout);
+                //等待期间收到过中断请求，那么直接退出循环
                 if ((interruptMode = checkInterruptWhileWaiting(node)) != 0)
                     break;
                 nanosTimeout = deadline - System.nanoTime();

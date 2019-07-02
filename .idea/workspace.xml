@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c464f76-259a-4567-ad61-78cb513ddf92" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/ConditionSourceAnalyse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/wn/CountDownLatchAnalyse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/wn/CyclicBarrierAnalyse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/AQSSourceAnalyse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/AQSSourceAnalyse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/topideal/com/multithread/lock/AQSSourceAnalyse$ConditionObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/topideal/com/multithread/lock/AQSSourceAnalyse$ConditionObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/topideal/com/multithread/lock/AQSSourceAnalyse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/topideal/com/multithread/lock/AQSSourceAnalyse.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -26,33 +23,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/wn/CountDownLatchAnalyse.java">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/concurrent/CyclicBarrier.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+            <state relative-caret-position="271">
+              <caret line="206" selection-start-line="206" selection-end-line="206" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#925#926#0" expanded="true" />
-                <element signature="e#982#983#0" expanded="true" />
-                <element signature="e#5463#5464#0" expanded="true" />
-                <element signature="e#5500#5501#0" expanded="true" />
-                <element signature="e#5703#5704#0" expanded="true" />
-                <element signature="e#5741#5742#0" expanded="true" />
-                <element signature="e#6042#6043#0" expanded="true" />
-                <element signature="e#6119#6120#0" expanded="true" />
+                <element signature="e#9581#9582#0" expanded="true" />
+                <element signature="e#9616#9617#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/concurrent/CountDownLatch.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/wn/CyclicBarrierAnalyse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-39">
-              <caret line="36" column="61" lean-forward="true" selection-start-line="36" selection-start-column="61" selection-end-line="36" selection-end-column="61" />
+            <state relative-caret-position="377">
+              <caret line="111" column="47" selection-start-line="111" selection-start-column="37" selection-end-line="111" selection-end-column="47" />
               <folding>
-                <element signature="e#5391#5392#0" expanded="true" />
-                <element signature="e#5448#5449#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#5517#5518#0" expanded="true" />
+                <element signature="e#5552#5553#0" expanded="true" />
+                <element signature="e#5741#5742#0" expanded="true" />
+                <element signature="e#5771#5772#0" expanded="true" />
+                <element signature="e#14368#14369#0" expanded="true" />
+                <element signature="e#14420#14421#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,8 +56,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/AQSSourceAnalyse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="683" column="17" selection-start-line="683" selection-start-column="17" selection-end-line="683" selection-end-column="17" />
+            <state relative-caret-position="357">
+              <caret line="1841" column="37" selection-start-line="1841" selection-start-column="37" selection-end-line="1841" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#7281#7282#0" expanded="true" />
@@ -118,7 +113,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/observer/v4/Event.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/observer/v4/Mouse.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/observer/v4/MouseEventListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/observer/v4/MouseEventTest.java" />
@@ -167,8 +161,9 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/wn/Prod_Cons_Condition.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/wn/Prod_Cons_Tradition.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/ConditionSourceAnalyse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/AQSSourceAnalyse.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/wn/CountDownLatchAnalyse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/wn/CyclicBarrierAnalyse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/AQSSourceAnalyse.java" />
       </list>
     </option>
   </component>
@@ -252,16 +247,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="multithread" type="462c0819:PsiDirectoryNode" />
-              <item name="lock" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="design-pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="design-pattern" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="multithread" type="462c0819:PsiDirectoryNode" />
               <item name="wn" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -280,7 +265,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562036727196" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562049439397" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -290,18 +275,18 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="cn.topideal.com.design.adapter" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/wn" />
       <recent name="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock" />
       <recent name="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/observer/v2" />
       <recent name="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/observer/v3" />
       <recent name="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/adapter/c2/v2/adapters" />
-      <recent name="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/adapter/c2/v1" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.topideal.com.design.adapter" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -316,7 +301,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.CountDownLatchAnalyse">
+  <component name="RunManager" selected="Application.CyclicBarrierAnalyse">
     <configuration name="ConditionSourceAnalyse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.topideal.com.multithread.lock.ConditionSourceAnalyse" />
       <module name="design-pattern" />
@@ -332,6 +317,19 @@
     </configuration>
     <configuration name="CountDownLatchAnalyse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.topideal.com.multithread.wn.CountDownLatchAnalyse" />
+      <module name="design-pattern" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.topideal.com.multithread.wn.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CyclicBarrierAnalyse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.topideal.com.multithread.wn.CyclicBarrierAnalyse" />
       <module name="design-pattern" />
       <extension name="coverage">
         <pattern>
@@ -369,26 +367,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReadOnWriteLock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.topideal.com.multithread.lock.ReadOnWriteLock" />
-      <module name="design-pattern" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.topideal.com.multithread.lock.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CyclicBarrierAnalyse" />
         <item itemvalue="Application.CountDownLatchAnalyse" />
         <item itemvalue="Application.ConditionSourceAnalyse" />
         <item itemvalue="Application.Prod_Cons_Condition" />
         <item itemvalue="Application.Prod_Cons_Tradition" />
-        <item itemvalue="Application.ReadOnWriteLock" />
       </list>
     </recent_temporary>
   </component>
@@ -416,7 +401,7 @@
       <workItem from="1561986016665" duration="89000" />
       <workItem from="1562029494369" duration="943000" />
       <workItem from="1562030508356" duration="46000" />
-      <workItem from="1562030654551" duration="5739000" />
+      <workItem from="1562030654551" duration="9736000" />
     </task>
     <task id="LOCAL-00001" summary="原型模式">
       <created>1561105176784</created>
@@ -429,13 +414,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="227375000" />
+    <option name="totallyTimeSpent" value="231372000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="973" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.861521" weight="0.25579977" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.861521" weight="0.20757021" />
       <window_info id="Structure" order="1" sideWeight="0.138479" side_tool="true" weight="0.26862028" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -444,8 +429,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291714" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" weight="0.3643587" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.059023835" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" weight="0.14188422" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.58569807" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -581,19 +566,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/cas/CasAbaQue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#375#376#0" expanded="true" />
-            <element signature="e#304#305#0" expanded="true" />
-            <element signature="e#326#327#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/cas/cas.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="606">
@@ -628,13 +600,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/concurrent/CyclicBarrier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-419">
-          <caret line="197" column="36" selection-start-line="197" selection-start-column="31" selection-end-line="197" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -1102,7 +1067,7 @@
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/concurrent/CountDownLatch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-39">
+        <state relative-caret-position="-83">
           <caret line="36" column="61" lean-forward="true" selection-start-line="36" selection-start-column="61" selection-end-line="36" selection-end-column="61" />
           <folding>
             <element signature="e#5391#5392#0" expanded="true" />
@@ -1113,7 +1078,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/wn/CountDownLatchAnalyse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
+        <state relative-caret-position="-2532">
           <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1129,10 +1094,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/concurrent/CyclicBarrier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="206" selection-start-line="206" selection-end-line="206" />
+          <folding>
+            <element signature="e#9581#9582#0" expanded="true" />
+            <element signature="e#9616#9617#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/wn/CyclicBarrierAnalyse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="111" column="47" selection-start-line="111" selection-start-column="37" selection-end-line="111" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5517#5518#0" expanded="true" />
+            <element signature="e#5552#5553#0" expanded="true" />
+            <element signature="e#5741#5742#0" expanded="true" />
+            <element signature="e#5771#5772#0" expanded="true" />
+            <element signature="e#14368#14369#0" expanded="true" />
+            <element signature="e#14420#14421#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/AQSSourceAnalyse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="683" column="17" selection-start-line="683" selection-start-column="17" selection-end-line="683" selection-end-column="17" />
+        <state relative-caret-position="357">
+          <caret line="1841" column="37" selection-start-line="1841" selection-start-column="37" selection-end-line="1841" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#7281#7282#0" expanded="true" />
