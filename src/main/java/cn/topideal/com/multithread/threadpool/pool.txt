@@ -1,0 +1,7 @@
+//线程池的工作原理
+public Future<?> submit(Runnable task) {
+    if (task == null) throw new NullPointerException();
+    RunnableFuture<Void> ftask = newTaskFor(task, null);//构建任务对象，如果是Runnable接口的，则通过适配器包装成Callable接口
+    execute(ftask);//放入任务池中
+    return ftask;
+}
