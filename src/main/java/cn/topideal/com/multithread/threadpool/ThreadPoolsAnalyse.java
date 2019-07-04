@@ -1,7 +1,10 @@
 package cn.topideal.com.multithread.threadpool;
 
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
+
 import java.util.UUID;
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 线程池的原理分析
@@ -84,7 +87,7 @@ public class ThreadPoolsAnalyse {
      */
     public static void getDefinedThreadPool(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit) {
         executorService = new ThreadPoolExecutor(corePoolSize, maximumPoolSize, keepAliveTime, unit,
-                new ArrayBlockingQueue<>(2));
+                new ArrayBlockingQueue<>(2), new ThreadFactoryBuilder().setNameFormat("XX-task-%d").build());
     }
 
     public static void getFixedThreadPool(int poolSize) {
@@ -103,4 +106,21 @@ public class ThreadPoolsAnalyse {
         executorService = Executors.newScheduledThreadPool(5);
     }
 
+    /**
+     * 自定义线程工厂
+     */
+    static class DefinedThreadFactory implements ThreadFactory {
+
+        private String namePrefix;
+        private AtomicInteger integer = new AtomicInteger(1);
+
+        public DefinedThreadFactory(String groupName) {
+            this.namePrefix = "DefinedThreadFactory-" + groupName + "-Worker-";
+        }
+
+        @Override
+        public Thread newThread(Runnable r) {
+            return new Thread(r, namePrefix + integer.getAndIncrement());
+        }
+    }
 }
