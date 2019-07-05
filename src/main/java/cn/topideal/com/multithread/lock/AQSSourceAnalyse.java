@@ -1624,9 +1624,9 @@ public class AQSSourceAnalyse extends AbstractOwnableSynchronizer
          */
         private void doSignal(Node first) {
             do {
-                if ((firstWaiter = first.nextWaiter) == null)//从队首开始唤醒
-                    lastWaiter = null;
-                first.nextWaiter = null;
+                if ((firstWaiter = first.nextWaiter) == null)//从队首开始唤醒 将下一个waiter节点赋值给firstWaiter
+                    lastWaiter = null;//如果下一个waiter节点为空，意味着就一个firstWaiter，将lastWaiter置空
+                first.nextWaiter = null;//只唤醒一个节点，只把当前节点加入到同步队列中
             } while (!transferForSignal(first) && //将当前first节点加入到同步队列中去
                     (first = firstWaiter) != null);
         }
