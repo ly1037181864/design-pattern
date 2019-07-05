@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c464f76-259a-4567-ad61-78cb513ddf92" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/adapter/c3/RunnableAbleTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/adapter/c3/RunnableAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/design/adapter/c3/ThreadAdapterFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/threadpool/线程池工作原理.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/StackOverflow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/interrupt/InterruptDemo2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/threadpool/ThreadPoolExecutorAnalyse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/threadpool/ThreadPoolExecutorAnalyse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/threadpool/ThreadPoolsAnalyse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/threadpool/ThreadPoolsAnalyse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/threadpool/pool.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/threadpool/pool.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/topideal/com/multithread/threadpool/ThreadPoolExecutorAnalyse$AbortPolicy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/topideal/com/multithread/threadpool/ThreadPoolExecutorAnalyse$AbortPolicy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/topideal/com/multithread/threadpool/ThreadPoolExecutorAnalyse$CallerRunsPolicy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/topideal/com/multithread/threadpool/ThreadPoolExecutorAnalyse$CallerRunsPolicy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/topideal/com/multithread/threadpool/ThreadPoolExecutorAnalyse$DiscardOldestPolicy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/topideal/com/multithread/threadpool/ThreadPoolExecutorAnalyse$DiscardOldestPolicy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/topideal/com/multithread/threadpool/ThreadPoolExecutorAnalyse$DiscardPolicy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/topideal/com/multithread/threadpool/ThreadPoolExecutorAnalyse$DiscardPolicy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/topideal/com/multithread/threadpool/ThreadPoolExecutorAnalyse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/topideal/com/multithread/threadpool/ThreadPoolExecutorAnalyse.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -33,111 +23,52 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/threadpool/ThreadPoolsAnalyse.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/StackOverflow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="111" column="4" selection-start-line="111" selection-start-column="4" selection-end-line="124" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4420#4421#0" expanded="true" />
-                <element signature="e#4504#4505#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="114">
+              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/concurrent/Executors.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/interrupt/InterruptDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="173" column="59" selection-start-line="173" selection-start-column="40" selection-end-line="173" selection-end-column="59" />
-              <folding>
-                <element signature="e#15215#15216#0" expanded="true" />
-                <element signature="e#15264#15265#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="228">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/concurrent/LinkedBlockingQueue.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/interrupt/ThreadInterruptDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="258" column="7" lean-forward="true" selection-start-line="258" selection-start-column="7" selection-end-line="258" selection-end-column="7" />
-              <folding>
-                <element signature="e#7388#7389#0" expanded="true" />
-                <element signature="e#7427#7428#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/concurrent/ThreadPoolExecutor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="315" column="8" lean-forward="true" selection-start-line="315" selection-start-column="8" selection-end-line="315" selection-end-column="8" />
-              <folding>
-                <element signature="e#16690#16691#0" expanded="true" />
-                <element signature="e#16719#16720#0" expanded="true" />
-                <element signature="e#16766#16767#0" expanded="true" />
-                <element signature="e#16801#16802#0" expanded="true" />
-                <element signature="e#17458#17459#0" expanded="true" />
-                <element signature="e#17531#17532#0" expanded="true" />
-                <element signature="e#25302#25303#0" expanded="true" />
-                <element signature="e#25341#25342#0" expanded="true" />
-                <element signature="e#25532#25533#0" expanded="true" />
-                <element signature="e#25578#25579#0" expanded="true" />
-                <element signature="e#31791#31792#0" expanded="true" />
-                <element signature="e#31834#31835#0" expanded="true" />
-                <element signature="e#32187#32188#0" expanded="true" />
-                <element signature="e#32243#32244#0" expanded="true" />
-                <element signature="e#58342#58343#0" expanded="true" />
-                <element signature="e#58403#58404#0" expanded="true" />
-                <element signature="e#66401#66402#0" expanded="true" />
-                <element signature="e#66439#66440#0" expanded="true" />
-                <element signature="e#68070#68071#0" expanded="true" />
-                <element signature="e#68142#68143#0" expanded="true" />
-                <element signature="e#68539#68540#0" expanded="true" />
-                <element signature="e#68571#68572#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/queue/SynchronousQueueAnalyse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
-              <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="190">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/threadpool/ThreadPoolExecutorAnalyse.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/interrupt/InterruptDemo2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="564">
-              <caret line="1115" column="51" selection-start-line="1115" selection-start-column="51" selection-end-line="1115" selection-end-column="51" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2553#2554#0" expanded="true" />
-                <element signature="e#2581#2582#0" expanded="true" />
-                <element signature="e#2641#2642#0" expanded="true" />
-                <element signature="e#2670#2671#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="380">
+              <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/concurrent/FutureTask.java">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/Thread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="406" column="26" lean-forward="true" selection-start-line="406" selection-start-column="26" selection-end-line="406" selection-end-column="26" />
+            <state relative-caret-position="218">
+              <caret line="263" column="47" selection-start-line="263" selection-start-column="32" selection-end-line="263" selection-end-column="47" />
+              <folding>
+                <element signature="e#36709#36710#0" expanded="true" />
+                <element signature="e#36767#36768#0" expanded="true" />
+                <element signature="e#37304#37305#0" expanded="true" />
+                <element signature="e#37347#37348#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -189,8 +120,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicthread/Demo4.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicthread/JoinDemo.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicthread/basicThread.txt" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicThread.txt" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/basicthread/ImplThreadDemo.java" />
@@ -240,6 +169,8 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/threadpool/pool.txt" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/threadpool/ThreadPoolsAnalyse.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/threadpool/ThreadPoolExecutorAnalyse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/Test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/interrupt/InterruptDemo2.java" />
       </list>
     </option>
   </component>
@@ -273,7 +204,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -324,7 +255,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="multithread" type="462c0819:PsiDirectoryNode" />
-              <item name="threadpool" type="462c0819:PsiDirectoryNode" />
+              <item name="interrupt" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="design-pattern" type="b2602c69:ProjectViewProjectNode" />
@@ -335,13 +266,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562241403419" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562290152106" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -377,7 +308,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ThreadPoolsAnalyse">
+  <component name="RunManager" selected="Application.InterruptDemo2">
     <configuration name="ArrayBlockingQueueAnalyse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.topideal.com.multithread.queue.ArrayBlockingQueueAnalyse" />
       <module name="design-pattern" />
@@ -391,12 +322,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BlockingQueueAnalyse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.topideal.com.multithread.queue.BlockingQueueAnalyse" />
+    <configuration name="InterruptDemo2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.topideal.com.multithread.interrupt.InterruptDemo2" />
       <module name="design-pattern" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cn.topideal.com.multithread.queue.*" />
+          <option name="PATTERN" value="cn.topideal.com.multithread.interrupt.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -443,13 +374,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.ArrayBlockingQueueAnalyse" />
+      <item itemvalue="Application.RunnableAbleTest" />
+      <item itemvalue="Application.SynchronousQueueAnalyse" />
+      <item itemvalue="Application.ThreadPoolsAnalyse" />
+      <item itemvalue="Application.InterruptDemo2" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.InterruptDemo2" />
         <item itemvalue="Application.ThreadPoolsAnalyse" />
         <item itemvalue="Application.RunnableAbleTest" />
         <item itemvalue="Application.SynchronousQueueAnalyse" />
         <item itemvalue="Application.ArrayBlockingQueueAnalyse" />
-        <item itemvalue="Application.BlockingQueueAnalyse" />
       </list>
     </recent_temporary>
   </component>
@@ -479,7 +417,8 @@
       <workItem from="1562030508356" duration="46000" />
       <workItem from="1562030654551" duration="20905000" />
       <workItem from="1562116114213" duration="24547000" />
-      <workItem from="1562205362371" duration="19509000" />
+      <workItem from="1562205362371" duration="20167000" />
+      <workItem from="1562289201158" duration="950000" />
     </task>
     <task id="LOCAL-00001" summary="原型模式">
       <created>1561105176784</created>
@@ -492,13 +431,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="286597000" />
+    <option name="totallyTimeSpent" value="288205000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="973" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.27582294" weight="0.26678878" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.27582294" visible="true" weight="0.22100122" />
       <window_info id="Structure" order="1" sideWeight="0.72417706" side_tool="true" weight="0.26678878" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -507,7 +446,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291714" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" weight="0.2905789" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.19863792" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.2985244" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -670,40 +609,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/concurrent/Semaphore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="425" column="26" selection-start-line="425" selection-start-column="13" selection-end-line="425" selection-end-column="26" />
-          <folding>
-            <element signature="e#15885#15886#0" expanded="true" />
-            <element signature="e#15922#15923#0" expanded="true" />
-            <element signature="e#27089#27090#0" expanded="true" />
-            <element signature="e#27133#27134#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/wn/Prod_Cons_Tradition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="20" column="15" lean-forward="true" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/concurrent/locks/AbstractQueuedLongSynchronizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="634" column="18" selection-start-line="634" selection-start-column="18" selection-end-line="634" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/wn/analyse.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3633">
-          <caret line="340" lean-forward="true" selection-start-line="340" selection-end-line="340" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/concurrent/DelayQueue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="491">
@@ -979,13 +884,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17841">
-          <caret line="1002" column="32" selection-start-line="1002" selection-start-column="32" selection-end-line="1002" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/concurrent/Executor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2014">
@@ -1154,8 +1052,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/threadpool/ThreadPoolExecutorAnalyse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="1115" column="51" selection-start-line="1115" selection-start-column="51" selection-end-line="1115" selection-end-column="51" />
+        <state relative-caret-position="539">
+          <caret line="1115" column="51" lean-forward="true" selection-start-line="1115" selection-start-column="51" selection-end-line="1115" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2553#2554#0" expanded="true" />
@@ -1163,6 +1061,47 @@
             <element signature="e#2641#2642#0" expanded="true" />
             <element signature="e#2670#2671#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/StackOverflow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/interrupt/InterruptDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/interrupt/ThreadInterruptDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="263" column="47" selection-start-line="263" selection-start-column="32" selection-end-line="263" selection-end-column="47" />
+          <folding>
+            <element signature="e#36709#36710#0" expanded="true" />
+            <element signature="e#36767#36768#0" expanded="true" />
+            <element signature="e#37304#37305#0" expanded="true" />
+            <element signature="e#37347#37348#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/interrupt/InterruptDemo2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
         </state>
       </provider>
     </entry>
