@@ -1,0 +1,200 @@
+//SynchronizousQueue原理分析
+
+//栈的数据逻辑处理 else if (casHead(h, s = snode(s, e, h, mode))) 这里永远是将后进入的节点设置为Head节点，这也就是所谓的后进新出
+//获取元素
+public E take() throws InterruptedException {
+    //通过静态transferer封装操作和获取元素的逻辑，这里又分为公平和非公平，公平采用的是队列形式，非公平采用的是栈形式
+    E e = transferer.transfer(null, false, 0);
+    if (e != null)
+        return e;
+    Thread.interrupted();
+    throw new InterruptedException();
+}
+
+public E take() throws InterruptedException {
+    E e = transferer.transfer(null, false, 0);
+    if (e != null)
+        return e;
+    Thread.interrupted();
+    throw new InterruptedException();
+}
+
+//数据put/take的具体逻辑
+E transfer(E e, boolean timed, long nanos) {
+    //如果e == null 则是take操作，否则是put操作，这里不用offer和poll操作，是因为他们传入的timed=true，在if (timed && nanos <= 0)判断时，
+    //直接返回null，就会造成放入元素和取出元素都为空，所以这里不强调使用
+    SNode s = null; // constructed/reused as needed
+    int mode = (e == null) ? REQUEST : DATA;
+
+    for (;;) {
+        SNode h = head;
+        //如果head为空，或者head操作类型与当前操作类型相同
+        if (h == null || h.mode == mode) {  // empty or same-mode
+            if (timed && nanos <= 0) {      // can't wait
+                if (h != null && h.isCancelled())
+                    casHead(h, h.next);     // pop cancelled node
+                else
+                    return null;
+            } else if (casHead(h, s = snode(s, e, h, mode))) {//构建head节点，并将原head节点添加到新head节点之后
+                //在此处等待匹配 如果当前是put操作，就必须要等到take操作出现，如果当前是take操作，就必须等到put操作出现，否
+                //则会一直空旋或者阻塞下去，直到可以匹配为止
+                SNode m = awaitFulfill(s, timed, nanos);//空旋结束或者阻塞被唤醒，意味着当前已经有匹配结果了
+                if (m == s) {               // wait was cancelled
+                    clean(s);
+                    return null;
+                }
+                if ((h = head) != null && h.next == s) //将s的下一个节点设置为head节点
+                    casHead(h, s.next);     // help s's fulfiller
+                return (E) ((mode == REQUEST) ? m.item : s.item);//返回匹配到的结果值
+            }
+        } else if (!isFulfilling(h.mode)) { // try to fulfill 如果还没有匹配，尝试去匹配
+            if (h.isCancelled())            // already cancelled
+                casHead(h, h.next);         // pop and retry
+            else if (casHead(h, s=snode(s, e, h, FULFILLING|mode))) { 构建一个非0、1、2的node节点，并设置为head节点并原head节点设置为新head节点的后续节点
+                //到这里说明队列中出现了put和take成对操作，也就是说这个时候，是可以来判断是否可以匹配成功了，如果当前操作是put操作那么它next的节点一定是take操作
+                //所以只需要将head节点设置为设置为match，然后去匹配next节点即可，如果成功就返回结果
+                for (;;) { // loop until matched or waiters disappear
+                    SNode m = s.next;       // m is s's match
+                    if (m == null) {        // all waiters are gone
+                        casHead(s, null);   // pop fulfill node
+                        s = null;           // use new node next time
+                        break;              // restart main loop
+                    }
+                    SNode mn = m.next;
+                    if (m.tryMatch(s)) {
+                        casHead(s, mn);     // pop both s and m
+                        return (E) ((mode == REQUEST) ? m.item : s.item);
+                    } else                  // lost match
+                        s.casNext(m, mn);   // help unlink
+                }
+            }
+        } else {                            // help a fulfiller 这里的逻辑是同上面的逻辑是一样的，只是说当前head节点可能正在处理匹配逻辑
+            SNode m = h.next;               // m is h's match
+            if (m == null)                  // waiter is gone
+                casHead(h, null);           // pop fulfilling node
+            else {
+                SNode mn = m.next;
+                if (m.tryMatch(h))          // help match
+                    casHead(h, mn);         // pop both h and m
+                else                        // lost match
+                    h.casNext(m, mn);       // help unlink
+            }
+        }
+    }
+}
+
+SNode awaitFulfill(SNode s, boolean timed, long nanos) {
+    //这里对于take和put操作来说deadline =0，因为timed永远等于false
+    final long deadline = timed ? System.nanoTime() + nanos : 0L;
+    Thread w = Thread.currentThread();
+    int spins = (shouldSpin(s) ? //根据当前节点是否是head节点，来决定当前线程的空旋时间，如果当前s节点不是head节点，则直接挂起，
+                                 //否则允许一定的时间空旋，避免线程上下文切换带来的开销
+                 (timed ? maxTimedSpins : maxUntimedSpins) : 0);
+    for (;;) {
+        if (w.isInterrupted())
+            s.tryCancel();
+        SNode m = s.match;
+        if (m != null)
+            return m;
+        if (timed) {
+            nanos = deadline - System.nanoTime();
+            if (nanos <= 0L) {
+                s.tryCancel();
+                continue;
+            }
+        }
+        if (spins > 0)
+            spins = shouldSpin(s) ? (spins-1) : 0;//对空旋次数减1
+        else if (s.waiter == null)
+            s.waiter = w; // establish waiter so can park next iter
+        else if (!timed)
+            LockSupport.park(this);//如果达到空旋次数还没有匹配到，则挂起线程
+        else if (nanos > spinForTimeoutThreshold)
+            LockSupport.parkNanos(this, nanos);
+    }
+}
+
+//判断当前s节点是不是head节点，或者是head节点为空，或者是当前head节点mode类型为2
+//这里的逻辑是用来判断awaitFulfill是否需要自旋操作
+boolean shouldSpin(SNode s) {
+    SNode h = head;
+    return (h == s || h == null || isFulfilling(h.mode));
+}
+
+//队列，公平实现原理
+public E take() throws InterruptedException {
+    E e = transferer.transfer(null, false, 0);
+    if (e != null)
+        return e;
+    Thread.interrupted();
+    throw new InterruptedException();
+}
+
+public void put(E e) throws InterruptedException {
+    if (e == null) throw new NullPointerException();
+    if (transferer.transfer(e, false, 0) == null) {
+        Thread.interrupted();
+        throw new InterruptedException();
+    }
+}
+
+E transfer(E e, boolean timed, long nanos) {
+    QNode s = null; // constructed/reused as needed
+    boolean isData = (e != null);//判断是put操作还是take操作
+
+    for (;;) {
+        QNode t = tail;
+        QNode h = head;
+        if (t == null || h == null)         // saw uninitialized value
+            continue;                       // spin
+
+        if (h == t || t.isData == isData) { // empty or same-mode  如果当前是哨兵节点，或者当前操作与head节点的操作类型相同
+            QNode tn = t.next;
+            if (t != tail)                  // inconsistent read
+                continue;
+            if (tn != null) {               // lagging tail
+                advanceTail(t, tn);
+                continue;
+            }
+            if (timed && nanos <= 0)        // can't wait
+                return null;
+            if (s == null)
+                s = new QNode(e, isData); //构建一个新的节点 然后替换tail节点 这里就是与非公平的差异 非公平是将新的节点替换head，而这里是替换tail节点
+                //这也就是所谓的先进先出和后进先出的区别
+            if (!t.casNext(null, s))        // failed to link in
+                continue;
+
+            advanceTail(t, s);              // swing tail and wait
+            Object x = awaitFulfill(s, e, timed, nanos);
+            if (x == s) {                   // wait was cancelled
+                clean(t, s);
+                return null;
+            }
+
+            if (!s.isOffList()) {           // not already unlinked
+                advanceHead(t, s);          // unlink if head
+                if (x != null)              // and forget fields
+                    s.item = s;
+                s.waiter = null;
+            }
+            return (x != null) ? (E)x : e;
+
+        } else {                            // complementary-mode
+            QNode m = h.next;               // node to fulfill
+            if (t != tail || m == null || h != head)
+                continue;                   // inconsistent read
+
+            Object x = m.item;
+            if (isData == (x != null) ||    // m already fulfilled
+                x == m ||                   // m cancelled
+                !m.casItem(x, e)) {         // lost CAS
+                advanceHead(h, m);          // dequeue and retry
+                continue;
+            }
+
+            advanceHead(h, m);              // successfully fulfilled
+            LockSupport.unpark(m.waiter);
+            return (x != null) ? (E)x : e;
+        }
+    }
+}
