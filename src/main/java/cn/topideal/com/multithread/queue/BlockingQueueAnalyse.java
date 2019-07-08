@@ -31,19 +31,24 @@ import java.util.concurrent.TimeUnit;
  * poll(time, unit):从队首移除元素,当队列已空时,阻塞指定时间后退出
  */
 public class BlockingQueueAnalyse {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         //BlockingQueue<String> blockingQueue = new ArrayBlockingQueue<String>(10);
         //BlockingQueue<String> blockingQueue = new LinkedBlockingQueue<>(10);
         BlockingQueue<String> blockingQueue = new SynchronousQueue<>();
         blockingQueueTest(blockingQueue);
+        //System.out.println(blockingQueue.offer("a"));
+        //System.out.println(blockingQueue.offer("b"));
+        //System.out.println(blockingQueue.offer("c"));
+        //System.out.println(blockingQueue.offer("d"));
+        //System.out.println(blockingQueue.take());
     }
 
-    private static void blockingQueueTest(BlockingQueue<String> blockingQueue) {
+    private static void blockingQueueTest(BlockingQueue<String> blockingQueue) throws InterruptedException {
         new Thread(() -> {
             while (!Thread.currentThread().isInterrupted()) {
                 String str = UUID.randomUUID().toString().substring(0, 8);
-                blockingQueue.offer(str);
                 try {
+                    System.out.println(blockingQueue.offer(str) + "\t" + blockingQueue.size());
                     Random random = new Random();
                     int sleep = random.nextInt(5);
                     TimeUnit.MILLISECONDS.sleep((sleep + 1) * 100);
@@ -54,10 +59,12 @@ public class BlockingQueueAnalyse {
 
         }).start();
 
+        TimeUnit.SECONDS.sleep(1);
+
         new Thread(() -> {
             while (!Thread.currentThread().isInterrupted()) {
                 try {
-                    System.out.println(blockingQueue.take() + "\t" + blockingQueue.size());
+                    System.out.println(blockingQueue.poll() + "\t" + blockingQueue.size());
                     Random random = new Random();
                     int sleep = random.nextInt(5);
                     TimeUnit.MILLISECONDS.sleep((sleep + 1) * 100);
