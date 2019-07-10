@@ -86,10 +86,19 @@ public class FourReference {
         System.out.println(reference.get());
     }
 
-
+    /**
+     * -XX:+PrintReferenceGC
+     * 必须要开启-XX:+PrintGCDetails  -XX:+PrintGC这个不能显示出GC的详细信息
+     * [SoftReference, 0 refs, 0.0000135 secs][WeakReference, 12 refs, 0.0000069 secs]
+     * [FinalReference, 87 refs, 0.0000375 secs]
+     * [PhantomReference, 0 refs, 0 refs, 0.0000233 secs]
+     * [JNI Weak Reference, 0.0000084 secs]
+     *
+     * @param args
+     */
     public static void main(String[] args) {
-        //SoftReference();
-        //WeakReference();
+        SoftReference();
+        WeakReference();
         PhantomReference();
     }
 }

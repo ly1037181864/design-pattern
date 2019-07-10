@@ -1,0 +1,35 @@
+//虚拟机调优参数大全
+常见的JVM命令
+-Xmx							            最大的堆内存
+-Xms							            最小的堆内存
+-Xmn							            新生代的大小
+-XX:+PrintGCDetails					        打印GC日志信息
+-XX:+PrintGC						        打印GC信息简略版
+-XX:PretenureSizeThreshold=20m			    大对象直接分配到老年代
+-XX:MaxTenuringThreshold=15			        挨过GC的最大次数就晋升老年代
+-XX:HandlePromotionFailure
+-XX:UseSerialGC					            开启Serial垃圾收集器
+-XX:UseParNewGC					            开启ParNew垃圾收集器
+-XX:UseParallelGC					        开启Parallel垃圾收集器
+-XX:UseParallelOldGC					    开启ParallelOld垃圾收集器
+-XX:UseConcMarkSweepGC				        开启CMS垃圾收集器
+-XX:CMSInitiatingOccupancyFraction=10		老年代空间率达到给定值即执行一次CMS
+-XX:ConcGCThreads=10				        并发的垃圾回收线程数
+-XX:+DoEscapeAnalysis				        启用逃逸分析
+-XX:+EliminateAllocations				    启用标量替换
+-XX:-UseTLAB						        关闭TLAB
+-XX:+PrintHeapAtGC					        GC前打印堆信息
+-XX:+PrintGCTimeStamps				        打印GC时间
+-XX:+PrintGCApplicationConcurrentTime		打印应用程序执行时间
+-XX:+PrintGCApplicationStoppedTime			打印应用程序停顿时间
+-Xloggc:/User/liuyou/gc.log				    将GC日志打印到指定路径的文件里
+-XX:+PrintReferenceGC				        开启软、弱、虚引用GC跟踪
+-XX:SurvivorRatio=2                         调整eden和from/to的比例
+-XX:+TraceClassLoading                      查看虚拟机加载的类信息
+-XX:+HeapDumpOnOutOfMemoryError             对内存溢出时将堆的信息输出日志
+-XX:HeapDumpPath=/Users/liuyou/a.dump       日志记录目录
+-XX:MaxMetaspaceSize=10m                    设置元空间大小
+-XX:MaxDeirectMemorySize                    最大直接内存
+-XX:+PrintVMOptions                         打印修改后的JVM参数
+-XX:+InitialHeapSize                        打印初始化堆大小
+-XX:+PrintFlagsFinal                        打印虚拟机各种参数

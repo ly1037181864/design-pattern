@@ -18,4 +18,5 @@ public class GcFlags {
         System.out.println("hello GC");
         Thread.sleep(Integer.MAX_VALUE);
     }
+
 }
