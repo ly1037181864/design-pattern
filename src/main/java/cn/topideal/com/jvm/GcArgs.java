@@ -6,16 +6,55 @@ package cn.topideal.com.jvm;
 public class GcArgs {
 
     public static void main(String[] args) {
-        test4();
+        test6();
     }
 
+
+    /**
+     * 并行GC额外出发新生代GC
+     * -XX:+UseSerialGC         [Full GC (System.gc())
+     * -XX:+UseParNewGC         [Full GC (System.gc())
+     * -XX:+UseParallelGC       [GC (System.gc()) [Full GC (System.gc())
+     * -XX:+UseParallelOldGC    [GC (System.gc()) [Full GC (System.gc())
+     * -XX:+UseConcMarkSWeepGC  [Full GC (System.gc())
+     * -xx:+UseG1GC             [Full GC (System.gc())
+     * <p>
+     * 通过对比我们发现
+     * 只有parallelGC和parallelOldGC在调用System.gc();时会触发一次新生代gc
+     * 这是为了先在新生代收集一次垃圾，避免将所有工作同时交给FullGC，降低停顿的时间
+     * 可以通过-XX:-ScavengeBeforeFullGC 禁止FullGC前的MinorGC 默认开启+
+     */
+    public static void test6() {
+        byte[] aa = new byte[5 * 1024 * 1024];
+        System.gc();
+    }
+
+    /**
+     * -XX:+ExplicitGCInvokesConcurrent
+     * System.gc();默认情况下是不支持并发执行，通过修改上面的参数就可以达到让gc并发执行
+     * <p>
+     * (initial-mark)
+     * [GC concurrent-root-region-scan-start]
+     * [GC concurrent-root-region-scan-end, 0.0003672 secs]
+     * [GC concurrent-mark-start]
+     * [GC concurrent-mark-end, 0.0000293 secs]
+     * [GC remark [Finalize Marking, 0.0000395 secs]
+     * [GC cleanup 5768K->5768K(10M), 0.0001024 secs]
+     * <p>
+     * 貌似没什么作用
+     */
+    public static void test5() {
+        byte[] aa = new byte[5 * 1024 * 1024];
+        byte[] bb = new byte[6 * 1024 * 1024];
+        System.gc();
+    }
 
     /**
      * -XX:+DisableExpicitGC 禁止手动调用System.gc();
      */
     public static void test4() {
         byte[] aa = new byte[5 * 1024 * 1024];
-        //byte[] bb = new byte[6 * 1024 * 1024];
+        byte[] bb = new byte[6 * 1024 * 1024];
         System.gc();
     }
 

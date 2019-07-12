@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c464f76-259a-4567-ad61-78cb513ddf92" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/G1Gc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/gc.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/ClassStructureAnalyse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/ClassStructureAnalyseUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/classAnalyse.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/FourReference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/FourReference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/FinalizeDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/FinalizeDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/GcArgs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/GcArgs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/GcFlags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/GcFlags.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/SevenGcCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/SevenGcCollector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/StackDistribution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/StackDistribution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/StackOverflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/StackOverflow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/vmargs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/vmargs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/topideal/com/jvm/FinalizeDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/topideal/com/jvm/FinalizeDemo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cn/topideal/com/jvm/GcArgs.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/topideal/com/jvm/GcArgs.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -31,49 +28,42 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/G1Gc.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/ClassStructureAnalyse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1098">
-              <caret line="110" selection-start-line="110" selection-end-line="110" />
+            <state relative-caret-position="92">
+              <caret line="11" column="50" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="50" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#126#127#0" expanded="true" />
+                <element signature="e#147#148#0" expanded="true" />
+                <element signature="e#339#340#0" expanded="true" />
+                <element signature="e#386#387#0" expanded="true" />
+                <element signature="e#729#730#0" expanded="true" />
+                <element signature="e#750#751#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/GcArgs.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/ClassStructureAnalyseUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
+            <state relative-caret-position="78">
+              <caret line="82" column="8" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3074#3075#0" expanded="true" />
+                <element signature="e#3096#3097#0" expanded="true" />
+                <element signature="e#4487#4488#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/GcFlags.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/classAnalyse.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/gc.log">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="31" column="104" selection-start-line="31" selection-start-column="104" selection-end-line="31" selection-end-column="104" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/StopTheWorld.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="603">
-              <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="52" selection-end-column="19" />
+            <state relative-caret-position="12">
+              <caret line="140" column="42" selection-start-line="140" selection-start-column="42" selection-end-line="140" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -126,9 +116,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/NonfairLock.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/ReadOnWriteLockSourceAnalyse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/ReadOnWriteLock.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/ReadOnWriteLock.txt" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/wn/Prod_Cons_Condition.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/wn/Prod_Cons_Tradition.java" />
@@ -166,7 +153,6 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/GCRoots.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/MemoryDistribution.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/EscapeAnalyse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/FinalizeDemo.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/StopTheWorld.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/StackOverflow.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/StackDistribution.java" />
@@ -177,6 +163,10 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/G1Gc.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/GcFlags.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/GcArgs.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/FinalizeDemo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/ClassStructureAnalyse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/classAnalyse.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/ClassStructureAnalyseUtil.java" />
       </list>
     </option>
   </component>
@@ -199,8 +189,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1" />
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="973" />
@@ -211,6 +200,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -254,22 +244,16 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="jvm" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="design-pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="design-pattern" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562747742548" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562851811176" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -305,7 +289,47 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.GcArgs">
+  <component name="RunManager" selected="Application.ClassStructureAnalyseUtil">
+    <configuration name="ClassStructureAnalyse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.topideal.com.jvm.ClassStructureAnalyse" />
+      <module name="design-pattern" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.topideal.com.jvm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClassStructureAnalyseUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.topideal.com.jvm.ClassStructureAnalyseUtil" />
+      <module name="design-pattern" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.topideal.com.jvm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FinalizeDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.topideal.com.jvm.FinalizeDemo" />
+      <module name="design-pattern" />
+      <option name="VM_PARAMETERS" value="-Xmx10m -Xms10m -XX:+PrintGCDetails -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=$USER_HOME$/b.dump" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.topideal.com.jvm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FourReference" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.topideal.com.jvm.FourReference" />
       <module name="design-pattern" />
@@ -337,7 +361,7 @@
     <configuration name="GcArgs" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.topideal.com.jvm.GcArgs" />
       <module name="design-pattern" />
-      <option name="VM_PARAMETERS" value="-Xmx10m -Xms10m -XX:+PrintGCDetails -XX:+DisableExplicitGC" />
+      <option name="VM_PARAMETERS" value="-Xmx10m -Xms10m -XX:+PrintGCDetails -XX:+UseConcMarkSweepGC -XX:-ExplicitGCInvokesConcurrent -XX:-ScavengeBeforeFullGC" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cn.topideal.com.jvm.*" />
@@ -376,49 +400,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StackDistribution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.topideal.com.jvm.StackDistribution" />
-      <module name="design-pattern" />
-      <option name="VM_PARAMETERS" value="-Xms10m -Xmx10m -XX:+PrintGCDetails -XX:+PrintHeapAtGC" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.topideal.com.jvm.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StackOverflow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.topideal.com.jvm.StackOverflow" />
-      <module name="design-pattern" />
-      <option name="VM_PARAMETERS" value="-Xss256k" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.topideal.com.jvm.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.MemoryDistribution" />
       <item itemvalue="Application.GcArgs" />
       <item itemvalue="Application.SevenGcCollector" />
-      <item itemvalue="Application.StackOverflow" />
-      <item itemvalue="Application.StackDistribution" />
       <item itemvalue="Application.FourReference" />
       <item itemvalue="Application.G1Gc" />
+      <item itemvalue="Application.FinalizeDemo" />
+      <item itemvalue="Application.ClassStructureAnalyse" />
+      <item itemvalue="Application.ClassStructureAnalyseUtil" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ClassStructureAnalyseUtil" />
+        <item itemvalue="Application.ClassStructureAnalyse" />
+        <item itemvalue="Application.FinalizeDemo" />
         <item itemvalue="Application.G1Gc" />
         <item itemvalue="Application.FourReference" />
-        <item itemvalue="Application.StackDistribution" />
-        <item itemvalue="Application.StackOverflow" />
       </list>
     </recent_temporary>
   </component>
@@ -451,7 +449,8 @@
       <workItem from="1562205362371" duration="20167000" />
       <workItem from="1562289201158" duration="27734000" />
       <workItem from="1562548253384" duration="20697000" />
-      <workItem from="1562596174730" duration="35799000" />
+      <workItem from="1562596174730" duration="40768000" />
+      <workItem from="1562806976932" duration="27380000" />
     </task>
     <task id="LOCAL-00001" summary="原型模式">
       <created>1561105176784</created>
@@ -464,13 +463,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="371485000" />
+    <option name="totallyTimeSpent" value="403834000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="23" width="1680" height="973" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="973" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6481481" visible="true" weight="0.17765568" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6481481" weight="0.17338218" />
       <window_info id="Structure" order="1" sideWeight="0.35185185" side_tool="true" weight="0.23687424" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -479,12 +478,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291714" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.498779" visible="true" weight="0.36208853" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.498779" visible="true" weight="0.2508513" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.5550511" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.498779" weight="0.81157774" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.498779" weight="0.46765038" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.501221" side_tool="true" weight="0.7139614" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.20317821" />
@@ -493,7 +492,7 @@
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.29625425" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.36874238" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.45543346" />
       <window_info anchor="right" id="Maven" order="3" weight="0.32967034" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
@@ -629,142 +628,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/design/factory/abstractfactory/BmAbstractFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/design/factory/simplefactory/SimpleFactoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-32">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/design/factory/simplefactory/SimpleFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-24">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/design/factory/simplefactory/QrSimpleCarFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/design/factory/simplefactory/BmSimpleCarFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/design/factory/entity/Tyre.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/design/factory/entity/QrCar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/design/factory/entity/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/design/factory/entity/Engine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/design/factory/entity/Chassis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/design/factory/entity/BmCar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/multithread/lock/definition/DefinitionAQS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="177" column="31" selection-start-line="177" selection-start-column="18" selection-end-line="177" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3371#3372#0" expanded="true" />
-            <element signature="e#3399#3400#0" expanded="true" />
-            <element signature="e#3438#3439#0" expanded="true" />
-            <element signature="e#3472#3473#0" expanded="true" />
-            <element signature="e#4148#4149#0" expanded="true" />
-            <element signature="e#4191#4192#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/security/AccessController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="795" column="75" selection-start-line="795" selection-start-column="47" selection-end-line="795" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/security/AccessControlContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-227">
-          <caret line="390" column="16" selection-start-line="390" selection-start-column="16" selection-end-line="390" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/reflect/Modifier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="66" column="26" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
-          <folding>
-            <element signature="e#1632#1633#0" expanded="true" />
-            <element signature="e#1674#1675#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/reflect/Field.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="389" column="27" selection-start-line="389" selection-start-column="16" selection-end-line="389" selection-end-column="27" />
-          <folding>
-            <element signature="e#6809#6810#0" expanded="true" />
-            <element signature="e#6836#6837#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/rt.jar!/sun/security/util/SecurityConstants.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/io/FilePermission.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="359">
@@ -857,16 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/io/FileInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1938">
-          <caret line="126" column="30" selection-start-line="126" selection-start-column="21" selection-end-line="126" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#14699#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/SecurityManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3838">
@@ -923,24 +776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="71">
           <caret line="84" column="13" selection-start-line="84" selection-start-column="8" selection-end-line="84" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/ref/Reference.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="230" column="32" selection-start-line="230" selection-start-column="32" selection-end-line="230" selection-end-column="32" />
-          <folding>
-            <element signature="e#10912#10913#0" expanded="true" />
-            <element signature="e#10948#10949#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/FinalizeDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1045,10 +880,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/StopTheWorld.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/G1Gc.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="52" selection-end-column="19" />
+        <state relative-caret-position="2071">
+          <caret line="110" selection-start-line="110" selection-end-line="110" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/GcArgs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/ref/Reference.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2242">
+          <caret line="143" column="44" selection-start-line="143" selection-start-column="44" selection-end-line="143" selection-end-column="44" />
+          <folding>
+            <element signature="e#10912#10913#0" expanded="true" />
+            <element signature="e#10948#10949#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/GcFlags.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1059,27 +922,179 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/G1Gc.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/StopTheWorld.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1098">
-          <caret line="110" selection-start-line="110" selection-end-line="110" />
+        <state relative-caret-position="931">
+          <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="52" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/FinalizeDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="914" column="40" selection-start-line="914" selection-start-column="40" selection-end-line="914" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/Character.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="163" column="28" selection-start-line="163" selection-start-column="28" selection-end-line="163" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/io/ByteArrayInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="122" column="66" selection-start-line="122" selection-start-column="60" selection-end-line="122" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/rt.jar!/com/sun/xml/internal/messaging/saaj/util/ByteInputStream.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="10" column="57" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="57" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#372#373#0" expanded="true" />
+            <element signature="e#408#409#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/GcFlags.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/nio/Buffer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        <state relative-caret-position="-42">
+          <caret line="196" column="46" selection-start-line="196" selection-start-column="43" selection-end-line="196" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/GcArgs.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/nio/ByteBuffer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
+        <state relative-caret-position="353">
+          <caret line="280" column="13" selection-start-line="280" selection-start-column="8" selection-end-line="280" selection-end-column="13" />
+          <folding>
+            <element signature="e#8515#8516#0" expanded="true" />
+            <element signature="e#8584#8585#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/io/InputStreamReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="111" column="52" selection-start-line="111" selection-start-column="45" selection-end-line="111" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/nio/charset/Charset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-336">
+          <caret line="270" column="22" selection-start-line="270" selection-start-column="22" selection-end-line="270" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/io/BufferedReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="99" column="43" selection-start-line="99" selection-start-column="41" selection-end-line="99" selection-end-column="43" />
+          <folding>
+            <element signature="e#3011#3012#0" expanded="true" />
+            <element signature="e#3058#3059#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/io/FileInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="232" column="39" selection-start-line="232" selection-start-column="33" selection-end-line="232" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#14699#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/net/Proxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="2" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/reflect/WeakCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="119" column="66" selection-start-line="119" selection-start-column="61" selection-end-line="119" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/rt.jar!/sun/misc/ProxyGenerator.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="109" column="32" selection-start-line="109" selection-start-column="28" selection-end-line="109" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/reflect/Proxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="638" column="69" selection-start-line="638" selection-start-column="51" selection-end-line="638" selection-end-column="69" />
+          <folding>
+            <element signature="e#0#34481#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/Integer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="531" column="22" selection-start-line="531" selection-start-column="22" selection-end-line="531" selection-end-column="22" />
+          <folding>
+            <element signature="e#7967#7968#0" expanded="true" />
+            <element signature="e#8013#8014#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/ClassStructureAnalyse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="11" column="50" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="50" />
+          <folding>
+            <element signature="e#126#127#0" expanded="true" />
+            <element signature="e#147#148#0" expanded="true" />
+            <element signature="e#339#340#0" expanded="true" />
+            <element signature="e#386#387#0" expanded="true" />
+            <element signature="e#729#730#0" expanded="true" />
+            <element signature="e#750#751#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/classAnalyse.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12">
+          <caret line="140" column="42" selection-start-line="140" selection-start-column="42" selection-end-line="140" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/topideal/com/jvm/ClassStructureAnalyseUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="82" column="8" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3074#3075#0" expanded="true" />
+            <element signature="e#3096#3097#0" expanded="true" />
+            <element signature="e#4487#4488#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
