@@ -1,91 +1,25 @@
 package cn.topideal.com.jvm;
 
+import cn.topideal.com.jvm.classanalyse.ClassDefintion;
+
 import java.io.*;
-import java.util.List;
 
 public class ClassStructureAnalyseUtil {
     public static final int ENCODING_16 = 16;
     public static final int DEFAULT_FLAG = 2;
 
-    public static class ClassDefintion {
-        private String magic;
-        private String minor_version;
-        private String major_version;
-        private List<ConsantInfo> consantInfoList;
-
-    }
-
-    public static class ConsantInfo {
-        ConstantType type;
-        String str;
-    }
-
-    public static class ConsantInfo_Utf8_Info extends ConsantInfo {
-        int strLen;
-    }
-
-    public static class ConsantInfo_Class_Info extends ConsantInfo {
-    }
-
-    public static class ConsantInfo_Utf8 extends ConsantInfo {
-        String strLen;
-    }
-
-    public static class ConsantInfo_Integer_Info extends ConsantInfo {
-    }
-
-    public static class ConsantInfo_Float_Info extends ConsantInfo {
-        String strLen;
-    }
-
-    public static class ConsantInfo_Long_Info extends ConsantInfo {
-        String strLen;
-    }
-
-    public static class ConsantInfo_Double_Info extends ConsantInfo {
-        String strLen;
-    }
-
-    public static class ConsantInfo_String_Info extends ConsantInfo {
-        String strLen;
-    }
-
-    public static class ConsantInfo_NameAndType_Info extends ConsantInfo {
-        String strLen;
-    }
-
-    public static class ConsantInfo_Methodref_Info extends ConsantInfo {
-        String strLen;
-    }
-
-    public static class ConsantInfo_Fieldref_Info extends ConsantInfo {
-        String strLen;
-    }
-
-    public static class ConsantInfo_InterfaceMethodref_Info extends ConsantInfo {
-        String strLen;
-    }
-
-    public static class ConsantInfo_MethodType_Info extends ConsantInfo {
-        String strLen;
-    }
-
-    public static class ConsantInfo_MethodHandle_Info extends ConsantInfo {
-        String strLen;
-    }
-
-    public static class ConsantInfo_InvokeDynamic_Info extends ConsantInfo {
-        String strLen;
-    }
-
-
-    public static void print(int cont, int consPoolsize) {
-
-    }
-
     public static void test() {
         int len = 0;//指针下标
         String str = loadClass().replaceAll(" ", "");
+        ClassDefintion classDefintion = new ClassDefintion();
+        classDefintion.setMagic(str.substring(0, len += ClassFileType.magic.len));//设置魔数
+        classDefintion.setMinor_version(str.substring(len, len += ClassFileType.minor_version.len));//设置低版本号
+        classDefintion.setMagic(str.substring(len, len += ClassFileType.major_version.len));//设置高版本号
+        //解析常量池
+        int consPoolsize = Integer.valueOf(str.substring(len, len += ClassFileType.constant_pool_count.len), ENCODING_16);
+        classDefintion.setConsPoolsize(consPoolsize);//设置常量池的大小
+        analyseConstantPool(str.substring(len));//解析常量池的内容
+
         if (!"CAFEBABE".equals(str.substring(0, len += ClassFileType.magic.len)))
             throw new RuntimeException("文件类型错误");
         String lowVersion = str.substring(len, len += ClassFileType.minor_version.len);
@@ -104,8 +38,24 @@ public class ClassStructureAnalyseUtil {
 
     }
 
+    private static void analyseConstantPool(String substring) {
+    }
+
     public static void main(String[] args) {
-        test();
+        String str = "636E2F74 6F706964 65616C2F 636F6D2F 6A766D2F 436C6173 73537472 75637475 7265416E 616C7973 65";
+        str = str.replaceAll(" ", "");
+        StringBuilder stringBuilder = new StringBuilder();
+        int len = 0;
+        while (len < str.length()) {
+
+            String asci = str.substring(len, len += 2);
+            int acii = Integer.valueOf(asci, 16);
+            //char chari = (char) acii;
+            stringBuilder.append((char) acii);
+            //System.out.print(chari);
+
+        }
+        System.out.print(stringBuilder.toString());
     }
 
     private static String loadClass() {
