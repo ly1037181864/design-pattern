@@ -8,10 +8,10 @@ import java.util.concurrent.CyclicBarrier;
 public class SingletonTest {
 
     public static void main(String[] args) {
-        test1();
+        //test1();
         //test2();
         //test3();
-        //test4();
+        test4();
         //test5();
         //test6();
     }
@@ -41,9 +41,13 @@ public class SingletonTest {
      * 枚举实现单例解决了序列化和反射带来的问题
      * 序列化和反序列化时枚举是通过类对象和类名来定位类的实例
      * 反射时JDK直接检测到如果时枚举类反射直接抛出异常，从JDK底层就避免了反射实例化枚举类
+     * 枚举实现单例，实际上就是利用了枚举类static静态代码块实现的懒加载形式，同时JDK和序列化都针对枚举做了优化，从而避免了序列化和反射带来的单例安全问题
+     * 枚举实现单例，就是将我们真实的对象作为枚举类的属性，因为枚举对象本身就是单例的，且避免了序列化和反射带来的安全问题，那么从该枚举对象获取到的属性也必然就是
+     * 单例且不会带来其他问题。
      */
     public static void test4() {
         EnumSingleton instance = EnumSingleton.getInstance();
+        //EnumSingleton instance = EnumSingleton.SINGLETON;
         instance.setObj(new Object());
 
         EnumSingleton instance2 = (EnumSingleton) serializableTest(instance);
@@ -57,6 +61,7 @@ public class SingletonTest {
             constructor.setAccessible(true);
             EnumSingleton instance3 = constructor.newInstance("tom", 666);
             System.out.println(instance == instance3);
+            System.out.println(instance.getObj() == instance3.getObj());
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
